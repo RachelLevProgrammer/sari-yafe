@@ -13,7 +13,7 @@
    PICTURE: a big dial in logo colours whose teal pencil-tip writes the hours
    COLOUR and TYPE: white, logo coral #FF5F3F, ink #1D1D1B, teal #068EA6; Rubik 900 like the logo, Assistant body
    LAYOUT: hero text + dial, marquee, services, 24h steps, portfolio tabs, about, testimonials, order form */
-:root{color-scheme:light dark;--bg:light-dark(#fff,#141413);--bg2:light-dark(#f7f4ef,#1c1c1a);--card:light-dark(#fff,#222220);--ink:light-dark(#1D1D1B,#f3efe8);--mute:light-dark(#5d5a55,#b4aea5);--line:light-dark(#e6e1d9,#34332f);--coral:#FF5F3F;--coral-d:#e84a2b;--teal:#068EA6;--teal-l:light-dark(#068EA6,#3fc0d6)}
+:root{color-scheme:light dark;--bg:light-dark(#fff,#141413);--bg2:light-dark(#f3f6f9,#1c1c1a);--card:light-dark(#fff,#222220);--ink:light-dark(#1D1D1B,#f3efe8);--mute:light-dark(#565e69,#aeb6c0);--line:light-dark(#e1e7ee,#34332f);--coral:#FF5F3F;--coral-d:#e84a2b;--teal:#14B3C4;--teal-l:light-dark(#0C93A6,#4fd6e6)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
@@ -245,7 +245,7 @@ h2{font-weight:800}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ring{stroke-dashoffset:0}.stamp{opacity:1}html{scroll-behavior:auto}}
 
 /* v3 refinements */
-:root{--tealbg:light-dark(#e3f3f6,#16313a)}
+:root{--tealbg:light-dark(#e8f8fa,#143840)}
 h1{font-size:clamp(46px,6.4vw,84px)}
 h1 .sub{font-size:.5em}
 .brand .tile{width:58px;height:58px;padding:6px;border-radius:14px;box-shadow:0 6px 16px -10px rgba(0,0,0,.4)}
@@ -260,9 +260,9 @@ h1 .sub{font-size:.5em}
 .ph{display:none;margin:36px 0 16px}
 .all .ph{display:block}
 .all .pane:first-of-type .ph{margin-top:12px}
-.frame{padding:clamp(22px,4vw,44px)}
-.frame::before{inset:auto;top:0;inset-inline-start:0;width:80%;height:80%;border:0;border-radius:36px;background:var(--teal);opacity:.9;transform:none}
-.frame::after{inset:auto;bottom:0;inset-inline-end:0;width:42%;height:42%;border:0;border-radius:50%;background:var(--coral)}
+.frame{padding:0}.frame .tile{border-radius:28px;box-shadow:0 24px 60px -28px rgba(29,29,27,.28),0 0 0 1px var(--line)}
+.frame::before,.frame::after{display:none}
+
 .frame .tile{position:relative;z-index:1}
 .foot a{color:#7fd6e6}
 .foot .credit{margin-top:28px;padding-top:22px;border-top:1px solid #3a3a36;justify-content:center;text-align:center;line-height:1.9}
@@ -271,7 +271,7 @@ h1 .sub{font-size:.5em}
 
 /* v5 hero: centered, animated headline */
 .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;min-height:clamp(540px,80vh,780px)}
-.herosec{position:relative;overflow:hidden;background:radial-gradient(ellipse 42% 45% at 88% 28%,rgba(255,95,63,.11),transparent 72%),radial-gradient(ellipse 42% 48% at 10% 62%,rgba(6,142,166,.13),transparent 72%),radial-gradient(ellipse 30% 30% at 50% 100%,rgba(6,142,166,.06),transparent 75%)}
+.herosec{position:relative;overflow:hidden;background:radial-gradient(ellipse 42% 45% at 88% 28%,rgba(255,95,63,.11),transparent 72%),radial-gradient(ellipse 42% 48% at 10% 62%,rgba(20,179,196,.14),transparent 72%),radial-gradient(ellipse 30% 30% at 50% 100%,rgba(20,179,196,.07),transparent 75%)}
 .hero>div:not(.shapes){position:relative;z-index:1;max-width:1100px;width:100%}
 .mark{width:92px;height:92px;margin:0 auto 20px;padding:10px;border-radius:24px;display:grid;box-shadow:0 18px 36px -18px rgba(0,0,0,.45)}
 .hero .kicker{margin:0 0 18px;justify-content:center}
@@ -498,7 +498,7 @@ const Q=[['רבקי קנפל','','כתיבה בלב שקט','היחידה שאנ
 ['יהודה ובײלי דויטש','','בשיחה אחת, ושיר מוכן','שרי היא מעבר למקצועיות. בשיחה אחת הסברתי לה כיוון, ותוך זמן קצר מאוד היא שלחה לי שיר בנוי, כתוב כמו שרציתי שיהיה, שנון, עם נושא צמוד למנגינה בטוב טעם. מעבר למקצועיות היא אשת שיחה מבינה עניין, כיף לשוחח איתה, ועומדת בזמנים. ממליצה בחום.'],
 ['רחל','תנועת בתיה','רעיונות מחוץ לקופסה','שרי היא כותבת ומפיקת תוכן מעולה. יש לה רעיונות מחוץ לקופסה, היא גם רכזת חברתית מוצלחת. יצירתית מאוד. נותנת שירות מצוין ועומדת בזמנים.'],
 ['יעל פינס','','וואו, איזו כתיבה!','וואו איזו כתיבה! תענוג. עומק ושנינות וחריזה ונגיעה עמוק ברגש. וואו.']];
-const col=['#FF5F3F','#068EA6','#1D1D1B'];
+const col=['#FF5F3F','#14B3C4','#1D1D1B'];
 $('#quotes').innerHTML=Q.map(([n,o,h,t],i)=>`<article class="q"><strong>${h}</strong><p>${t}</p><footer><span class="av" style="background:${col[i%3]}">${n[0]}</span><span><b>${n}</b>${o?`<small>${o}</small>`:''}</span></footer></article>`).join('');
 const qs=$('#quotes');const qstep=dir=>{const c=qs.querySelector('.q');qs.scrollBy({left:dir*(c.offsetWidth+18),behavior:reduce?'auto':'smooth'})};
 $('#qn').addEventListener('click',()=>qstep(-1));$('#qp').addEventListener('click',()=>qstep(1));
