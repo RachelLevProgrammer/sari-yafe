@@ -541,7 +541,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const start=()=>{fit();setTimeout(mark,1500)};
  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(start);
  addEventListener('resize',fit);
- if(!reduce)setInterval(()=>{k++;fit();mark();if(k===n){setTimeout(()=>{rail.style.transition='none';slot.style.transition='none';k=0;fit();void rail.offsetWidth;rail.style.transition='';slot.style.transition=''},800)}},2200)}
+ if(!reduce)setInterval(()=>{k++;fit();mark();if(k===n){setTimeout(()=>{rail.style.transition='none';slot.style.transition='none';k=0;fit();void rail.offsetWidth;rail.style.transition='';slot.style.transition=''},800)}},2800)}
 
 /* services */
 const svc=[['ש','שירים והמנונים','המנון מוסדי, שיר לסיום או לכבוד אירוע. נכנס בדיוק למנגינה, עם מסר חד וחריזה שזורמת.'],
