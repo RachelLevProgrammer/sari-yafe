@@ -341,6 +341,32 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 .step p{font-size:16.5px;line-height:1.55}
 .step::after{content:"";display:block;width:34px;height:4px;border-radius:4px;margin:18px auto 0;background:linear-gradient(90deg,var(--coral),var(--teal));opacity:.85}
 @media(max-width:760px){.steps{gap:42px;margin-top:48px}.steps::before{display:none}.step{display:block;text-align:center;padding:0 22px 28px}.step h3{margin:18px 0 8px}}
+
+/* ===== clean pass ===== */
+/* steps: clean numbered cards */
+.how{background:#e9f6f8}
+.steps{gap:22px;margin-top:48px}
+.steps::before{display:none}
+.step{border:0;background:#fff;border-radius:24px;padding:32px 28px 34px;text-align:start;box-shadow:0 1px 2px rgba(29,29,27,.04),0 20px 40px -30px rgba(29,29,27,.3);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.step::after{display:none}
+.step:hover{transform:translateY(-6px);box-shadow:0 1px 2px rgba(29,29,27,.04),0 30px 50px -30px rgba(29,29,27,.38)}
+.step .t{display:block;margin:0 0 18px;width:auto;min-width:0;height:auto;border:0;outline:0;background:none;box-shadow:none;border-radius:0;font:900 52px/1 Rubik;color:var(--coral);letter-spacing:-.02em}
+.step:hover .t{transform:none;box-shadow:none}
+.step h3{margin:0 0 8px;font-size:22px}
+.step p{font-size:16.5px;line-height:1.55;margin:0}
+.step:last-child{background:var(--teal);color:#fff}
+.step:last-child .t{background:none;color:#fff;box-shadow:none;outline:0;border:0}
+.step:last-child h3{color:#fff}.step:last-child p{color:rgba(255,255,255,.92)}
+.step:last-child:hover{box-shadow:0 30px 50px -28px rgba(20,179,196,.75)}
+@media(max-width:760px){.step{display:block;text-align:start;padding:28px 24px}.steps{gap:16px}}
+/* about: simple teal frame + orange underline */
+.frame::before,.frame::after{transition:none}
+.frame::after{display:none}
+.frame::before{display:block;content:"";position:absolute;inset:-14px;border:3px solid var(--teal);border-radius:36px;opacity:1;transform:none;background:none;width:auto;height:auto;pointer-events:none}
+.frame{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.frame:hover{transform:scale(1.025)}
+.frame:hover::before{transform:none}
+#about h2::after{background:var(--coral);height:5px}
 </style>
 </head>
 <body>
