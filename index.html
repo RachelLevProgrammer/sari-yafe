@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>שרי יפה · כתיבה ותוכן</title>
+<meta name="description" content="שרי יפה – כתיבת שירים, המנונים, מחזמרים, ספוקן ותכניות לסמינרים, בתי ספר ומוסדות. בדרך כלל מוכן תוך 24 שעות.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, quick, confident – a writer who delivers by tomorrow
+   IDEA: a 24-hour clock that turns an order into a finished song
+   PICTURE: a big dial in logo colours whose teal pencil-tip writes the hours
+   COLOUR and TYPE: white, logo coral #FF5F3F, ink #1D1D1B, teal #068EA6; Rubik 900 like the logo, Assistant body
+   LAYOUT: hero text + dial, marquee, services, 24h steps, portfolio tabs, about, testimonials, order form */
+:root{color-scheme:light dark;--bg:light-dark(#fff,#141413);--bg2:light-dark(#f7f4ef,#1c1c1a);--card:light-dark(#fff,#222220);--ink:light-dark(#1D1D1B,#f3efe8);--mute:light-dark(#5d5a55,#b4aea5);--line:light-dark(#e6e1d9,#34332f);--coral:#FF5F3F;--coral-d:#e84a2b;--teal:#068EA6;--teal-l:light-dark(#068EA6,#3fc0d6)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Assistant,"Segoe UI",Arial,sans-serif;overflow-x:clip}
+h1,h2,h3,.r{font-family:Rubik,Assistant,sans-serif}
+h1,h2,h3{margin:0;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(32px,4.4vw,50px);font-weight:900}
+h3{font-size:21px;font-weight:700}
+p{margin:0 0 .8em}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,18px)}
+.lede{font-size:19px;color:var(--mute);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;border:0;font:700 18px Rubik,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn.pri{background:var(--coral);color:#fff;box-shadow:0 10px 24px -10px rgba(255,95,63,.7)}
+.btn.pri:hover{background:var(--coral-d);transform:translateY(-2px)}
+.btn.sec{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.sec:hover{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:3px solid var(--teal-l);outline-offset:3px}
+.tile{background:#fff;border-radius:22px;display:grid;place-items:center}
+.tile img{display:block;width:100%;height:auto}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:18px;padding:10px max(5vw,18px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:900 21px Rubik}
+.brand .tile{width:44px;height:44px;border-radius:12px;padding:5px}
+nav{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+nav a{text-decoration:none;padding:8px 12px;border-radius:99px;font:500 16px Rubik}
+nav a:hover{background:var(--bg2)}
+header .btn{min-height:44px;padding:0 20px;font-size:16px}
+#ink{position:absolute;bottom:-1px;inset-inline-start:0;height:3px;width:0;background:var(--teal)}
+@media(max-width:860px){nav{display:none}header .btn{margin-inline-start:auto}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,64px);align-items:center;padding-top:clamp(36px,5vw,72px)}
+.kicker{display:inline-flex;gap:8px;align-items:center;font:500 16px Rubik;color:var(--teal-l);margin-bottom:18px}
+.kicker::before{content:"";width:0;height:0;border-inline:7px solid transparent;border-top:11px solid var(--teal)}
+h1{font-size:clamp(40px,5.6vw,72px);font-weight:800}
+h1 .sub{display:block;margin-top:.32em;font-size:.52em;font-weight:700;line-height:1.2}
+h1 .sub b{color:var(--teal-l)}
+#tw{color:var(--coral);white-space:nowrap}
+#tw::after{content:"";display:inline-block;width:.07em;height:.85em;background:var(--teal);margin-inline-start:.06em;vertical-align:-.06em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .lede{margin:22px 0 30px}.tag{display:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.tag{margin-top:30px;font:700 20px Rubik}.tag b{color:var(--teal-l)}
+.art{position:relative;aspect-ratio:1;max-width:500px;width:100%;margin-inline:auto}
+.art .blob{position:absolute;inset:5%;background:var(--coral);border-radius:46% 54% 58% 42%/48% 44% 56% 52%;animation:morph 14s ease-in-out infinite alternate}
+@keyframes morph{to{border-radius:58% 42% 44% 56%/56% 58% 42% 44%;transform:rotate(7deg)}}
+.art .card{position:absolute;inset:21% 19%;background:#fff;border-radius:28px;display:grid;place-items:center;padding:8%;box-shadow:0 34px 60px -24px rgba(0,0,0,.4);transform:rotate(-4deg)}
+.art .card img{width:100%;height:auto;display:block}
+.chip{position:absolute;padding:10px 20px;border-radius:99px;background:#fff;color:#1D1D1B;font:700 18px Rubik;box-shadow:0 16px 30px -16px rgba(0,0,0,.5);animation:bob 5s ease-in-out infinite}
+.chip.t{background:var(--teal);color:#fff}
+.c1{top:7%;inset-inline-start:0}.c2{top:15%;inset-inline-end:-2%;animation-delay:-1.2s}.c3{bottom:20%;inset-inline-start:-3%;animation-delay:-2.4s}.c4{bottom:8%;inset-inline-end:4%;animation-delay:-3.4s}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.art .tri{position:absolute;top:2%;inset-inline-start:42%;border-inline:20px solid transparent;border-top:32px solid var(--teal);transform:rotate(14deg)}
+.art .sq{position:absolute;bottom:1%;inset-inline-start:36%;width:34px;height:34px;background:var(--teal);transform:rotate(-8deg)}
+.trust{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;font:500 16px Rubik;color:var(--mute)}
+.trust b{color:var(--ink);font-weight:700}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.art{max-width:380px}}
+
+/* marquee */
+.marq{background:var(--coral);color:#fff;overflow:hidden;padding:18px 0;font:900 clamp(24px,3vw,36px) Rubik}
+.marq div{display:flex;gap:40px;width:max-content;animation:mq 38s linear infinite}
+.marq span{display:flex;gap:40px;align-items:center}
+.marq span::after{content:"";width:12px;height:12px;border-radius:50%;background:#1D1D1B}
+@keyframes mq{to{transform:translateX(50%)}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+.svc article{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .2s,box-shadow .2s}
+.svc article:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.svc i{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:color-mix(in srgb,var(--coral) 14%,transparent);color:var(--coral);font:900 22px Rubik;font-style:normal;margin-bottom:14px}
+.svc article:nth-child(even) i{background:color-mix(in srgb,var(--teal) 16%,transparent);color:var(--teal-l)}
+.svc p{color:var(--mute);margin:8px 0 0}
+@media(max-width:900px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.svc{grid-template-columns:1fr}}
+
+/* 24h steps */
+.how{background:#1D1D1B;color:#f3efe8}
+.how .lede{color:#c9c3ba}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:46px;position:relative}
+.steps::before{content:"";position:absolute;top:27px;inset-inline:6%;height:3px;background:linear-gradient(to left,var(--coral),var(--teal))}
+.step{position:relative;padding-inline:12px;text-align:center}
+.step .t{display:inline-grid;place-items:center;min-width:92px;height:56px;padding:0 14px;border-radius:99px;background:#1D1D1B;border:3px solid var(--coral);font:900 20px Rubik;position:relative;white-space:nowrap}
+.step:last-child .t{background:var(--teal);border-color:var(--teal)}
+.step h3{margin:18px 0 6px;font-size:20px}.step p{color:#c9c3ba;font-size:16px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:22px}.steps::before{top:0;bottom:0;inset-inline:auto;inset-inline-start:45px;width:3px;height:auto;background:linear-gradient(var(--coral),var(--teal))}.step{display:grid;grid-template-columns:92px 1fr;gap:16px;text-align:start;align-items:start;padding:0}.step h3{margin:6px 0 2px}}
+
+/* portfolio */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 12px}
+.tabs button{min-height:46px;padding:0 22px;border-radius:99px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:700 17px Rubik;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.note{display:flex;gap:8px;align-items:center;font-size:15px;color:var(--mute);margin-bottom:22px}
+.note::before{content:"©";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font:700 13px Rubik;flex:none}
+.pane[hidden]{display:none}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.vcard{position:relative;border:0;padding:0;border-radius:20px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9;text-align:start}
+.vcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s,opacity .3s;opacity:.92}
+.vcard:hover img{transform:scale(1.05);opacity:1}
+.vcard .cap{position:absolute;inset:auto 0 0 0;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff;font:700 19px Rubik;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.vcard .cap small{font:400 14px Assistant;opacity:.85;display:block}
+.play{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--coral);flex:none}
+.play::before{content:"";border-block:10px solid transparent;border-inline-end:16px solid #fff;margin-inline-end:-4px}
+@media(max-width:640px){.vids{grid-template-columns:1fr}}
+.player{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.now{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;padding:22px;background:var(--bg2)}
+.big-play{width:64px;height:64px;border-radius:50%;border:0;background:var(--coral);cursor:pointer;display:grid;place-items:center}
+.big-play::before{content:"";border-block:12px solid transparent;border-inline-end:19px solid #fff;margin-inline-end:-5px}
+.big-play.on::before{border:0;width:20px;height:22px;margin:0;background:linear-gradient(to left,#fff 35%,transparent 35% 65%,#fff 65%)}
+.now h3{font-size:20px}
+.bar{position:relative;height:8px;border-radius:9px;background:var(--line);margin-top:12px;cursor:pointer}
+.bar i{position:absolute;inset-block:0;inset-inline-start:0;width:0;border-radius:9px;background:linear-gradient(to left,var(--teal),var(--coral))}
+.times{display:flex;justify-content:space-between;font-size:14px;color:var(--mute);margin-top:6px;font-variant-numeric:tabular-nums}
+.eq{display:inline-flex;gap:3px;height:16px;align-items:end;margin-inline-start:8px;vertical-align:-2px}
+.eq b{width:3px;background:var(--coral);height:30%;border-radius:2px}
+.on-air .eq b{animation:eq .9s ease-in-out infinite alternate}.on-air .eq b:nth-child(2){animation-delay:-.3s}.on-air .eq b:nth-child(3){animation-delay:-.6s}
+@keyframes eq{to{height:100%}}
+.tracks{list-style:none;margin:0;padding:8px}
+.tracks button{width:100%;display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;min-height:56px;padding:6px 12px;border:0;border-radius:14px;background:none;color:var(--ink);font:500 17px Rubik;text-align:start;cursor:pointer}
+.tracks button:hover{background:var(--bg2)}
+.tracks button[aria-current=true]{background:color-mix(in srgb,var(--coral) 12%,transparent)}
+.tracks .n{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:2px solid var(--line);font-size:15px}
+.tracks [aria-current=true] .n{background:var(--coral);border-color:var(--coral);color:#fff}
+.tracks .d{color:var(--mute);font:400 15px Assistant;font-variant-numeric:tabular-nums}
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.doc{position:relative;border:1px solid var(--line);background:var(--card);border-radius:20px;padding:26px 22px 22px;text-align:start;cursor:pointer;color:var(--ink);font:inherit;overflow:hidden;min-height:220px;display:flex;flex-direction:column;transition:transform .2s}
+.doc:hover{transform:translateY(-4px) rotate(-.6deg)}
+.doc::after{content:"";position:absolute;inset-inline-end:0;top:0;width:46px;height:46px;background:linear-gradient(225deg,var(--bg) 50%,var(--line) 50%)}
+.doc .c{font:500 14px Rubik;color:var(--teal-l)}
+.doc h3{margin:8px 0}.doc p{color:var(--mute);font-size:16px;flex:1}
+.doc .open{font:700 16px Rubik;color:var(--coral)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,80px);align-items:center}
+.frame{position:relative;padding:clamp(18px,3vw,34px)}
+.frame::before{content:"";position:absolute;inset:0;border:3px solid var(--teal);border-bottom:0;border-inline-start:0;border-start-end-radius:0;border-end-end-radius:0}
+.frame::after{content:"";position:absolute;inset-inline-end:0;bottom:-40px;width:60%;height:120px;border:3px solid var(--teal);border-top:0;border-inline-start:0;border-end-end-radius:110px}
+.frame .tile{padding:clamp(20px,4vw,48px);box-shadow:0 30px 60px -36px rgba(0,0,0,.4)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.facts span{padding:8px 16px;border-radius:99px;background:var(--bg2);font:500 15px Rubik}
+@media(max-width:760px){.about{grid-template-columns:1fr}.frame{max-width:300px}.frame::after{display:none}}
+
+/* testimonials */
+.quotes-band{background:var(--bg2)}
+.qhead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.arrows{display:flex;gap:8px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:2px solid var(--ink);background:none;color:var(--ink);font:700 20px Rubik;cursor:pointer}
+.arrows button:hover{background:var(--ink);color:var(--bg)}
+.quotes{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 2px 10px;scrollbar-width:none}
+.quotes::-webkit-scrollbar{display:none}
+.q{flex:0 0 min(400px,86%);scroll-snap-align:start;background:var(--card);border-radius:24px;padding:30px 28px 26px;display:flex;flex-direction:column;position:relative;box-shadow:0 20px 40px -32px rgba(0,0,0,.4)}
+.q::before{content:"”";position:absolute;top:-6px;inset-inline-start:22px;font:900 90px/1 Rubik;color:var(--coral);opacity:.9}
+.q strong{display:block;font:900 24px/1.2 Rubik;margin:28px 0 12px}
+.q p{color:var(--mute);flex:1}
+.q footer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:8px}
+.q .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font:700 18px Rubik;color:#fff;flex:none}
+.q b{font:700 17px Rubik;display:block}.q small{color:var(--mute);font-size:14px}
+
+/* order */
+.order{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:start}
+.easy{list-style:none;padding:0;margin:26px 0}
+.easy li{display:flex;gap:14px;align-items:center;margin-bottom:14px;font:500 18px Rubik}
+.easy li span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--coral);color:#fff;font-weight:900;flex:none}
+.easy li:nth-child(2) span{background:var(--teal)}.easy li:nth-child(3) span{background:var(--ink);color:var(--bg)}
+.calm{font:900 26px/1.25 Rubik;margin-top:8px}
+.contact-card{margin-top:30px;padding:22px;border-radius:20px;border:2px dashed var(--line)}
+.contact-card .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+.mono{font:700 18px Rubik;direction:ltr;unicode-bidi:isolate}
+form{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:clamp(20px,3vw,36px);box-shadow:0 30px 60px -44px rgba(0,0,0,.45)}
+.fh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
+.fh small{color:var(--mute);font-size:14px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+label{display:block;font:500 15px Rubik;margin-bottom:6px}
+label em{color:var(--coral);font-style:normal}
+input,textarea{width:100%;font:16px Assistant,sans-serif;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:12px 14px;min-height:48px}
+textarea{min-height:130px;resize:vertical}
+input:focus,textarea:focus{outline:0;border-color:var(--teal)}
+.f{margin-bottom:14px}.f.bad input,.f.bad textarea{border-color:var(--coral)}
+.f .err{display:none;color:var(--coral);font-size:14px}.f.bad .err{display:block}
+.send{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.send .btn{flex:1 1 220px;justify-content:center}
+.link{background:none;border:0;color:var(--mute);font:500 15px Rubik;text-decoration:underline;cursor:pointer;padding:8px 4px;min-height:44px}
+#sent{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;background:color-mix(in srgb,var(--teal) 14%,transparent);font:500 16px Rubik}
+#sent.show{display:block}
+@media(max-width:860px){.order{grid-template-columns:1fr}}
+
+/* footer */
+.foot{background:#1D1D1B;color:#f3efe8;padding:44px max(5vw,18px) 30px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.foot .tile{width:84px;padding:8px;border-radius:16px}
+.foot p{margin:0;color:#c9c3ba;font-size:15px}
+
+/* viewer (protected) */
+.viewer{position:fixed;inset:0;z-index:50;background:rgba(15,15,14,.82);backdrop-filter:blur(6px);display:none;place-items:center;padding:16px}
+.viewer.open{display:grid}
+.vbox{position:relative;width:min(920px,100%);max-height:92vh;display:flex;flex-direction:column;background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.vtop{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.vtop h3{flex:1;font-size:19px}
+.x{width:44px;height:44px;border-radius:50%;border:0;background:var(--bg2);color:var(--ink);font:700 22px Rubik;cursor:pointer;flex:none}
+.rights{display:flex;gap:10px;align-items:flex-start;padding:10px 18px;background:color-mix(in srgb,var(--teal) 12%,var(--card));font-size:14px;line-height:1.5}
+.rights::before{content:"©";flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font:700 13px Rubik}
+.vbody{position:relative;overflow:auto;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.vbody video{display:block;width:100%;max-height:70vh;background:#000}
+.wm{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='190'%3E%3Ctext x='150' y='100' transform='rotate(-24 150 100)' text-anchor='middle' font-family='Rubik,Arial' font-size='17' font-weight='700' fill='%23068EA6' fill-opacity='.13'%3E© שרי יפה · אין להעתיק%3C/text%3E%3C/svg%3E")}
+.vid-wm{position:absolute;top:12px;inset-inline-end:14px;color:#fff;font:700 14px Rubik;opacity:.75;pointer-events:none;text-shadow:0 1px 3px #000}
+.text{position:relative;padding:clamp(22px,4vw,48px);white-space:pre-wrap;font-size:18px;line-height:1.9;max-width:760px;margin:0 auto}
+.pages{position:relative;padding:16px;display:grid;gap:14px;background:var(--bg2)}
+.pages img{width:100%;max-width:760px;margin:0 auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.15);pointer-events:none}
+@media print{body{display:none}}
+h2{font-weight:800}
+.svc article{background:var(--bg2);border:0}
+.svc article:hover{transform:none;box-shadow:none}
+.svc article::before{content:"";display:block;width:0;height:0;border-inline:8px solid transparent;border-top:13px solid var(--coral);margin-bottom:16px}
+.svc article:nth-child(even)::before{border-top-color:var(--teal)}
+.step .t{min-width:56px;width:56px;padding:0}
+.paths{display:grid;gap:14px;margin:28px 0 8px}
+.path{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start;padding:20px;border-radius:20px;background:var(--bg2)}
+.path>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font:800 20px Rubik}
+.path:nth-child(2)>span{background:var(--teal)}
+.path p{margin:4px 0 0;color:var(--mute);font-size:16px}
+.path .btn{margin-top:14px;min-height:46px;font-size:16px}
+.addr{margin-top:12px;color:var(--mute);font-size:15px}
+.addr .mono{font-size:16px;color:var(--ink)}
+.go{width:100%;justify-content:center;margin-top:6px}
+.fine{margin:12px 0 0;color:var(--mute);font-size:15px;text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ring{stroke-dashoffset:0}.stamp{opacity:1}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top"><span class="tile"><img src="m/mark.jpg" alt="" draggable="false"></span>שרי יפה</a>
+  <nav aria-label="ניווט"><a href="#services">מה אני כותבת</a><a href="#how">איך זה עובד</a><a href="#work">עבודות</a><a href="#about">עליי</a><a href="#love">ממליצות</a></nav>
+  <a class="btn pri" href="#order">להזמנת כתיבה</a>
+</div><i id="ink"></i></header>
+
+<main id="top">
+<section class="band"><div class="wrap hero">
+  <div>
+    <div class="kicker">כתיבה ותוכן לסמינרים, בתי ספר ומוסדות</div>
+    <h1>צריכה <span id="tw">המנון</span>?<span class="sub">יותר מאלף מילים. <b>מילה שלי.</b></span></h1>
+    <p class="lede">שירים, המנונים, מחזמרים, ספוקן ותכניות שלמות. כתוב במיוחד בשבילכן, מדויק למסר ולמנגינה ומלוטש עד הסוף.</p>
+    <div class="cta-row"><a class="btn pri" href="#order">להזמנת כתיבה ←</a><a class="btn sec" href="#work">לשמוע עבודות</a></div>
+    <div class="trust"><span><b>7</b> המלצות</span><span><b>10</b> שירים לשמיעה</span><span><b>4</b> קליפים</span></div>
+  </div>
+  <div class="art" aria-hidden="true">
+    <div class="blob"></div>
+    <div class="card"><img src="m/mark.jpg" alt="" draggable="false"></div>
+    <span class="chip c1">המנון</span><span class="chip t c2">מחזמר</span><span class="chip t c3">ספוקן</span><span class="chip c4">תכנית סיום</span>
+    <i class="tri"></i><i class="sq"></i>
+  </div>
+</div></section>
+
+<section class="band" id="services"><div class="wrap">
+  <h2>מה אני כותבת</h2>
+  <p class="lede" style="margin-top:14px">כל סוגי הכתיבה למוסד, לכיתה ולבמה. אתן מספרות במה מדובר, ואני מחזירה טקסט שעובד: נשמע טוב, נכנס למנגינה ונוגע.</p>
+  <div class="svc" id="svc"></div>
+</div></section>
+
+<section class="band how" id="how"><div class="wrap">
+  <h2>נכנסים, ממלאים, ובראש שקט: זה מוכן.</h2>
+  <p class="lede" style="margin-top:14px">בלי שיחות ארוכות ובלי לרדוף. ממלאות טופס קצר אחד, והעבודה כבר בדרך.</p>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<section class="band" id="work"><div class="wrap">
+  <h2>להתרשם מקרוב</h2>
+  <p class="lede" style="margin-top:14px">מבחר מתוך עבודות שכבר עלו על הבמה. אפשר לצפות, לשמוע ולקרוא.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-p="pv">וידאו ומחזמרים</button>
+    <button role="tab" aria-selected="false" data-p="pa">שירים לשמיעה</button>
+    <button role="tab" aria-selected="false" data-p="pd">כתיבה לקריאה</button>
+  </div>
+  <p class="note">כל העבודות מוצגות לצפייה והאזנה בלבד, ללא הורדה. כל הזכויות שמורות לשרי יפה.</p>
+  <div class="pane" id="pv"><div class="vids" id="vids"></div></div>
+  <div class="pane" id="pa" hidden>
+    <div class="player" id="player">
+      <div class="now"><button class="big-play" id="bp" aria-label="ניגון"></button>
+        <div><h3><span id="nt">בחרי שיר מהרשימה</span><span class="eq"><b></b><b></b><b></b></span></h3>
+        <div class="bar" id="bar"><i id="prog"></i></div><div class="times"><span id="cur">0:00</span><span id="dur">0:00</span></div></div>
+      </div>
+      <ol class="tracks" id="tracks"></ol>
+      <audio id="au" preload="none" controlslist="nodownload"></audio>
+    </div>
+  </div>
+  <div class="pane" id="pd" hidden><div class="docs" id="docs"></div></div>
+</div></section>
+
+<section class="band" id="about" style="background:var(--bg2)"><div class="wrap about">
+  <div class="frame"><div class="tile"><img src="m/mark.jpg" alt="הלוגו של שרי יפה" draggable="false"></div></div>
+  <div>
+    <h2>קצת עליי</h2>
+    <p class="lede" style="margin-top:18px">אני כותבת ומפיקה תוכן, עם ניסיון רב בכל סוגי הכתיבה: שירים והמנונים, מחזמרים, ספוקן, סיפורים, תסריטים ותכניות שלמות, לסמינרים, לבתי ספר ולמוסדות.</p>
+    <p class="lede">מה שמייחד אותי הוא הדיוק וגם המהירות. בשיחה אחת אני קולטת את הסגנון ואת המטרה, משלבת פסוקים, ציטוטים והומור במקום הנכון, ומחזירה עבודה מלוטשת, בדרך כלל תוך 24 שעות.</p>
+    
+  </div>
+</div></section>
+
+<section class="band quotes-band" id="love"><div class="wrap">
+  <div class="qhead"><div><h2>מה אומרות הרכזות</h2><p class="lede" style="margin-top:12px">מכתבים אמיתיים שהגיעו לתיבת המייל.</p></div>
+  <div class="arrows"><button id="qn" aria-label="הבא">→</button><button id="qp" aria-label="הקודם">←</button></div></div>
+  <div class="quotes" id="quotes" tabindex="0"></div>
+</div></section>
+
+<section class="band" id="order"><div class="wrap order">
+  <div>
+    <h2>מה כותבים הפעם?</h2>
+    <p class="lede" style="margin-top:14px">שתי דרכים, ובשתיהן נפתח Gmail עם מייל מוכן. נשאר רק ללחוץ "שליחה".</p>
+    <div class="paths">
+      <div class="path"><span>1</span><div><h3>יודעות מה צריך</h3><p>ממלאים את הטופס, והפרטים נכנסים למייל מסודר.</p></div></div>
+      <div class="path"><span>2</span><div><h3>מעדיפות סתם לכתוב</h3><p>כפתור אחד שפותח מייל ריק אליי.</p><a class="btn sec" id="plain" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=sl4165399@gmail.com">כתיבת מייל לשרי</a></div></div>
+    </div>
+    <p class="addr">הכתובת: <span class="mono">sl4165399@gmail.com</span><br>טלפון: <span class="mono">053-4165399</span> (לא ווטסאפ)</p>
+  </div>
+  <form id="f" novalidate>
+    <div class="fh"><h3>טופס הזמנה</h3><small>* שדה חובה</small></div>
+    <div class="grid2">
+      <div class="f"><label for="nm">שם הרכזת<em>*</em></label><input id="nm" autocomplete="name"><span class="err">נא למלא שם</span></div>
+      <div class="f"><label for="org">שם המוסד<em>*</em></label><input id="org" autocomplete="organization"><span class="err">נא למלא את שם המוסד</span></div>
+      <div class="f"><label for="mel">מנגינה</label><input id="mel" placeholder="שם השיר או קישור"></div>
+      <div class="f"><label for="goal">יעד</label><input id="goal" placeholder="סיום שנה, מסיבת חנוכה..."></div>
+    </div>
+    <div class="f"><label for="cnt">תוכן השיר<em>*</em></label><textarea id="cnt" placeholder="על מה השיר, מסרים, שמות, פסוקים, משפטים שחשוב שיופיעו..."></textarea><span class="err">כמה מילים על התוכן יעזרו לי מאוד</span></div>
+    <div class="grid2">
+      <div class="f"><label for="due">למתי צריכה?<em>*</em></label><input id="due" type="date"><span class="err">נא לבחור תאריך</span></div>
+      <div class="f"><label for="ph">טלפון לחזרה</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" dir="ltr"></div>
+    </div>
+    <a class="btn pri go" id="gm" target="_blank" rel="noopener" href="#">שליחת ההזמנה במייל</a>
+    <p class="fine">נפתח חלון Gmail חדש עם כל הפרטים. שרי תחזור באישור שהעבודה נכנסה ללו"ז.</p>
+    <div id="sent" role="status"></div>
+  </form>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div style="display:flex;gap:16px;align-items:center"><span class="tile"><img src="m/mark.jpg" alt="" draggable="false"></span><div><b class="r" style="font-size:20px">שרי יפה</b><p>יותר מאלף מילים. מילה שלי.</p></div></div>
+  <p>הפקות כתיבה ותוכן · רעיונאות · הנחיית קהל</p>
+  <p>© כל הזכויות שמורות לשרי יפה. אין להעתיק או להשתמש בתכנים ללא אישור.</p>
+</div></footer>
+
+<div class="viewer" id="vw" role="dialog" aria-modal="true" aria-labelledby="vt">
+  <div class="vbox">
+    <div class="vtop"><h3 id="vt"></h3><button class="x" id="vx" aria-label="סגירה">×</button></div>
+    <div class="rights">כל הזכויות שמורות לשרי יפה. העבודה מוצגת להתרשמות בלבד. אין להעתיק, להוריד, להפיץ או להשתמש בה ללא רשות מפורשת ולאחר תשלום.</div>
+    <div class="vbody" id="vb"></div>
+  </div>
+</div>
+
+<script>
+{
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MAIL='sl4165399@gmail.com';
+
+/* typewriter */
+const words=['המנון','שיר לסיום','מחזמר','ספוקן','פאנל','תכנית'];const tw=$('#tw');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce){let wi=0,ci=words[0].length,del=true;
+  const step=()=>{const w=words[wi];if(del){ci--;if(ci<=0){del=false;wi=(wi+1)%words.length}}else{ci++;}
+    const cur=words[wi];tw.textContent=cur.slice(0,Math.max(ci,0))||'​';
+    let t=del?55:95;if(!del&&ci>=cur.length){del=true;t=1900}setTimeout(step,t)};
+  setTimeout(step,2200)}
+
+/* services */
+const svc=[['ש','שירים והמנונים','המנון מוסדי, שיר לסיום או לכבוד אירוע. נכנס בדיוק למנגינה, עם מסר חד וחריזה שזורמת.'],
+['מ','מחזמרים והפקות','שירי מחזמר, קטעי קישור ועלילה שמחזיקה במה, מהפתיחה ועד שיר הסיום.'],
+['ס','ספוקן וקטעי קריאה','טקסטים קצביים ומרגשים לבמה, שנכתבו כדי להישמע בקול רם.'],
+['פ','פאנלים ותסריטים','תסריט צילום, מלל למסך ושאלות למנחה. תכנית שלמה, מוכנה להפקה.'],
+['ס','סיפורים ומאמרים','סיפור קצר, מאמר או קטע השראה לחוברת, לעלון או לערב מיוחד.'],
+['ר','רעיונאות והנחיית קהל','רעיון מרכזי לאירוע, ריאיונות על הבמה והנחיה שמחזיקה את האולם.']];
+$('#svc').innerHTML=svc.map(([i,t,p])=>`<article><h3>${t}</h3><p>${p}</p></article>`).join('');
+
+/* steps */
+const st=[['1','שולחות פרטים','טופס קצר אחד: מוסד, מנגינה, תוכן ויעד.'],['2','נכנס ללו"ז','מקבלות ממני מייל אישור שהעבודה בתור.'],['3','כותבת ומלטשת','מילה אחרי מילה, מותאם למסר ולמנגינה.'],['4','מוכן אצלך','בדרך כלל תוך 24 שעות, ותיקונים בשמחה אם צריך.']];
+$('#steps').innerHTML=st.map(([t,h,p])=>`<div class="step"><span class="t">${t}</span><div><h3>${h}</h3><p>${p}</p></div></div>`).join('');
+
+/* tabs */
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  document.querySelectorAll('.pane').forEach(p=>p.hidden=p.id!==b.dataset.p)}));
+
+const B={"mark": "0e68e1b1326b695f8d9ee4048ef3d1b3", "p": ["71877cd370f6036be2d3fc44666f8bf7", "e5c32e3f4e2055d398b7f639382ff5de", "d78aabf372881c322a9d8d72a2e991e3", "eeb0561189a270d635b27217b4c1c566"], "doc": ["9504bdcf18173dd7d39e6dc61d3656cd", "f9904150a61385d5c6f0a5ed6bbe4921", "57d33766d603e6a999588efb063fb349", "7db03407650528abd06b4fb78f974943"], "v": ["12056fc962875afa575fd35b95944b9c", "ff73009a226963be5a6c237e5317e91c", "6bdacfd5df1f08be2742168de98cc76b", "7b3deaf438056c36e0caf5000d5ffcac"], "au": ["158635a8fd79dfbedfe980cd6b97ddd0", "47b67fae87e0ab1e518e3a9e780423ce", "e814bffd9dfcb1b6c7b4567b46c09f7b", "9f3e2a9476c899c997e173067bc97d05", "757200308924f6581df5899fdcf6d13e", "f92798d0974bed3badf38cb36eaecf42", "0651459c1700075c6b4a709a05505c28", "c800cf09b2e39ffe7aa146a3f563d81b", "6a7ad100421a13a8c09449e0eb6b5749", "a2c33677ea4192ddbcb1c81b65b57155"]};const MP={"0e68e1b1326b695f8d9ee4048ef3d1b3": "m/mark.jpg", "71877cd370f6036be2d3fc44666f8bf7": "m/p1.jpg", "e5c32e3f4e2055d398b7f639382ff5de": "m/p2.jpg", "d78aabf372881c322a9d8d72a2e991e3": "m/p3.jpg", "eeb0561189a270d635b27217b4c1c566": "m/p4.jpg", "9504bdcf18173dd7d39e6dc61d3656cd": "m/doc-1.jpg", "f9904150a61385d5c6f0a5ed6bbe4921": "m/doc-2.jpg", "57d33766d603e6a999588efb063fb349": "m/doc-3.jpg", "7db03407650528abd06b4fb78f974943": "m/doc-4.jpg", "12056fc962875afa575fd35b95944b9c": "m/v1.mp4", "ff73009a226963be5a6c237e5317e91c": "m/v2.mp4", "6bdacfd5df1f08be2742168de98cc76b": "m/v3.mp4", "7b3deaf438056c36e0caf5000d5ffcac": "m/v4.mp4", "158635a8fd79dfbedfe980cd6b97ddd0": "m/au1.mp4", "47b67fae87e0ab1e518e3a9e780423ce": "m/au2.mp4", "e814bffd9dfcb1b6c7b4567b46c09f7b": "m/au3.mp4", "9f3e2a9476c899c997e173067bc97d05": "m/au4.mp4", "757200308924f6581df5899fdcf6d13e": "m/au5.mp4", "f92798d0974bed3badf38cb36eaecf42": "m/au6.mp4", "0651459c1700075c6b4a709a05505c28": "m/au7.mp4", "c800cf09b2e39ffe7aa146a3f563d81b": "m/au8.mp4", "6a7ad100421a13a8c09449e0eb6b5749": "m/au9.mp4", "a2c33677ea4192ddbcb1c81b65b57155": "m/au10.mp4"};const U=i=>MP[i];
+/* viewer */
+const vw=$('#vw'),vb=$('#vb');
+const openV=(title,html)=>{$('#vt').textContent=title;vb.innerHTML=html;vw.classList.add('open');document.body.style.overflow='hidden';$('#au').pause();$('#vx').focus()};
+const closeV=()=>{vw.classList.remove('open');vb.innerHTML='';document.body.style.overflow=''};
+$('#vx').addEventListener('click',closeV);vw.addEventListener('click',e=>{if(e.target===vw)closeV()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&vw.classList.contains('open'))closeV();
+  if((e.ctrlKey||e.metaKey)&&/^[spuc]$/i.test(e.key)&&(vw.classList.contains('open')||e.key.toLowerCase()!=='c'))e.preventDefault()});
+
+/* protection */
+['contextmenu','dragstart'].forEach(ev=>document.addEventListener(ev,e=>{if(e.target.closest('video,audio,img,.vbody,.player'))e.preventDefault()}));
+['copy','cut'].forEach(ev=>vb.addEventListener(ev,e=>e.preventDefault()));
+
+/* videos */
+const vids=[['v1','המנון "מנצחת"','קליפ מילים · 3:13'],['v2','מחזמר "כבוד" · קטע א׳','קליפ מילים · 3:52'],['v3','מחזמר "כבוד" · קטע ב׳','קליפ מילים · 3:52'],['v4','מחזמר "כבוד" · קטע ג׳','קליפ מילים · 3:32']];
+$('#vids').innerHTML=vids.map(([f,t,s],i)=>`<button class="vcard" data-i="${i}"><img src="${U(B.p[i])}" alt="" draggable="false"><span class="cap"><span>${t}<small>${s}</small></span><span class="play"></span></span></button>`).join('');
+$('#vids').addEventListener('click',e=>{const b=e.target.closest('.vcard');if(!b)return;const [f,t]=vids[b.dataset.i];
+  openV(t,`<video src="${U(B.v[b.dataset.i])}" controls autoplay playsinline controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture disableremoteplayback></video><span class="vid-wm">© שרי יפה</span>`)});
+
+/* audio */
+const tr=[['מתוך הפקה · חלק א׳',272],['מתוך הפקה · חלק ב׳',239],['מתוך הפקה · חלק ג׳',300],['מתוך הפקה · חלק ד׳',194],['שיר מקורי · ה׳',222],['שיר מקורי · ו׳',223],['שיר מקורי · ז׳',221],['שיר מקורי · ח׳',314],['שיר מקורי · ט׳',191],['שיר מקורי · י׳',191]];
+const fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+$('#tracks').innerHTML=tr.map(([t,s],i)=>`<li><button data-i="${i}"><span class="n">${i+1}</span><span>${t}</span><span class="d">${fmt(s)}</span></button></li>`).join('');
+const au=$('#au'),bp=$('#bp');let cur=-1;
+const load=i=>{cur=i;au.src=U(B.au[i]);$('#nt').textContent=tr[i][0];$('#dur').textContent=fmt(tr[i][1]);
+  document.querySelectorAll('#tracks button').forEach(b=>b.setAttribute('aria-current',+b.dataset.i===i))};
+const play=()=>au.play().catch(()=>{});
+$('#tracks').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;if(i===cur){au.paused?play():au.pause();return}load(i);play()});
+bp.addEventListener('click',()=>{if(cur<0){load(0)}au.paused?play():au.pause()});
+au.addEventListener('play',()=>{bp.classList.add('on');bp.setAttribute('aria-label','השהיה');$('#player').classList.add('on-air')});
+au.addEventListener('pause',()=>{bp.classList.remove('on');bp.setAttribute('aria-label','ניגון');$('#player').classList.remove('on-air')});
+au.addEventListener('timeupdate',()=>{$('#cur').textContent=fmt(au.currentTime);if(au.duration)$('#prog').style.width=(au.currentTime/au.duration*100)+'%'});
+au.addEventListener('ended',()=>{if(cur<tr.length-1){load(cur+1);play()}});
+$('#bar').addEventListener('click',e=>{if(!au.duration)return;const r=e.currentTarget.getBoundingClientRect();au.currentTime=(r.right-e.clientX)/r.width*au.duration});
+
+/* documents */
+let docs=[];
+const renderDocs=()=>{const all=docs.concat([{t:'זוכה ורואה',cat:'סיפור',d:'סיפור עתידני על סבתא, נכדה ומה שרואים באמת',pdf:4}]);
+  $('#docs').innerHTML=all.map((x,i)=>`<button class="doc" data-i="${i}"><span class="c">${esc(x.cat)}</span><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><span class="open">לקריאה ←</span></button>`).join('');
+  $('#docs').onclick=e=>{const b=e.target.closest('.doc');if(!b)return;const x=all[b.dataset.i];
+    if(x.pdf){let p='';for(let n=1;n<=x.pdf;n++)p+=`<img src="${U(B.doc[n-1])}" alt="עמוד ${n}" draggable="false">`;openV(x.t,`<div class="pages">${p}<div class="wm"></div></div>`)}
+    else openV(x.t,`<div class="text">${esc(x.text)}<div class="wm"></div></div>`)}};
+docs=[{"t": "אותך אבקש", "cat": "סיפור", "d": "סיפור קצר על בחירה, אמהות ומה שחשוב באמת", "text": "תמר מעבירה את הצ'יפ, הדלתות האוטומטיות נפתחות בפניה והיא כבר בפנים, לוחצת על כפתור המעלית שתעפיל למרומי הקומה העשירית במגדל המשרדים .\nאת שתי הדקות בהן עושה המעלית את דרכה למעלה היא מנצלת כדי לסקור בקפידה את בבואתה הנשקפת אליה דרך המראה – אישה צעירה, מטופחת ועייפה. כמה עייפה.\nמותשת כמו אישה שהלילה האחרון, כמו הלילות שקדמו לו השבוע חלפו עליה בניסיון נואש להרגיע את נעמה בת חמשת החודשים, שהתפתלה מכאבי בטן, וסירבה בכל תוקף לאפשר לאמה המותשת להניח את ראשה על הכר.\nכשנרדמה העוללה לבסוף, השמיים כבר החלו להיצבע באור ורוד – כתמתם שהבהיר לה כי כבר אין טעם לחזור למיטה, כיון שבעוד פחות משעה היא אמורה להתייצב בתחנת האוטובוס, מוכנה ליום עבודה.\nאת השעה הזו היא בחרה לנצל, כמובן, לתפילת שחרית חרישית וארגון אחרון של בגדי הילדים על כיסאות הסלון.\nהבית היה שקט, ורק נשימות המלאכים שלה נשמעו, עדינות וענוגות. שלושה אוצרות שיקומו עוד שעה לבוקר טוב ומבורך. כשהם יקומו היא תשב כבר מול המחשב במשרד, תוודא כמו בכל בוקר דרך הפלאפון שהם מאורגנים, לבושים ומרוצים ותשלח נשיקות ואיחולי 'יום טוב' מרחוק .\nלפני שיצאה לתחנה במרוצה עוד הספיקה לדחוף בקבוק לתיק של נעמה ופתק עם שרבוט של סמיילי לתיק של אליהו. וזהו. עכשיו היא יוצאת מהמעלית, תמר, מתכנתת בצוות הפיתוח של חברת ההייטק KADENSE. מסורה, מבריקה, חרוצה ו...שקטה.\nלפעמים היא חושבת על חברותיה משנות התיכון העליזים, או על שכנותיה לבניין וגיסותיה. הן היו מתקשות לזהות את  חברתן בדמותה של תמר מהמשרד. תמר היעילה, התמציתית והטכנית משהו, שלא דומה בכלל לתמר התקשורתית, הסוחפת שניצבת במרכזו של כל מעגל חברתי.\nאבל היא יודעת שזה הדבר הנכון עבורה, ולמרות שהתקשורת המסויגת דורשת ממנה כוחות נפש ומציבה אותה במקום בו לא הייתה מורגלת להיות- היא בוחרת להישאר בו בכל יום מחדש.\n\"בוקר אור\", מיטל מברכת אותה בחיוך רענן , \"מה אתך? את נראית עייפה. שיגעו אותך הילדים בלילה, אני צודקת?\"\nתמר מחייכת אליה בניד ראש, יודעת מה היתה מוכנה האישה הרחוקה שמולה לתת בשביל ברכת ה' שממלאה את כתלי ביתה בקולות מתיקות ואושר אמתיים.\nלאט לאט מאיישות כולן את העמדות , מיכל ויעלי, נויה ושיר, ריקי וענבר. מבליעות פיהוק עייף מאחורי חיוך גדול וצוללות לים העבודה.\nהצוות שלהן עומד כעת בשלביו האחרונים של פיתוח מתקדם, בימים הקרובים הן מעלות גרסה חדשה לאוויר והעובדה הזו מורגשת היטב במתח הלא שגרתי השורר במשרד.\nתמר עובדת בשקט, מהרהרת. כשהתקבלה לעבודה בחברת ההייטק , יותר משדברה אליה ההכנסה המכובדת והמשרה הנוחה המאפשרת לה לפרנס בכבוד בית של תורה, שימחה אותה הידיעה כי הצוות מורכב ברובו מנשים חרדיות. הידיעה הזו הקלה עליה כל כך. לתומה חשבה כי כל החששות על ניסיונות במקום עבודה, וכל מאות ההרצאות ששמעה בימי הסמינר- לא יהיו רלוונטים עבורה.\nלא זמן רב חלף עד שנוכחה להבין מקרוב את מה שידעה מאז ומעולם- תחת הגדרת החרדיות הרחבה חוסות גם נשים שהשקפת עולמה רחוקה משלהן כמרחק שנות אור, וחושך... כאלו שהשיח איתן רדוד כל כך, גשמי ופשרני. שבמרכז עולמן עומדים מושגים שהיא בוחרת להותיר מאחורי דלת ביתה.\nהבית הטהור שלה, בית של תורה. רק למענו היא יושבת כאן , במשרד, יודעת את התכלית ואת האמצעי...\nאוזניה קולטות את השיחה המתנהלת בין יעל וריקי. \"את חייבת לראות את התמונות, שולחת לך. נופים כמו שיש רק באירופה.... אני אומרת לך, יצאנו גם בזול ממש, יחסית למחירים המופקעים של הקיץ. וואו איזה טיול זה היה!\" קולה של ריקי נלהב וגבוה, מתאר בפעם המי יודע כמה את חווית הנופש האחרון בו בילתה בפראג, לאחר שמיצתה את כל מנעמי יבשת אירופה.\n\"וואו,\" יעל נושפת בערגה,\" בדיוק אתמול התחלנו לחשוב על הנופש של הקיץ הקרוב, מה אומרת על גאורגיה?\" השיחה קולחת וזורמת, טובלת בגשמיות מזוקקת, תמצית מנעמי העולם הזה, ותמר שוב בוהה במסך, שותקת.\nגם הן למדו בסמינר מצוין כמוה, גם הבית שלהן \"חרדי\" ייקרא, ומתנהל על פי חוקי התורה והמצוות, ועדיין הן שונות כל כך.\nכי רוח אחרת עמה. רוח של גובה וטוהר, רוח של קדושה הנושבת בין כתלי המשכן הפרטי שלה, ובו היא לא מותירה מקום למושגים שחדרו למחנה, מערערים חומות יצוקות בנות אלפי שנים ופותחים דלת למתירנות ותרבות של פסיחה על שתי הסעיפים...\n\"תמר, מה קורה?\" ריקי שמה לב פתאום לתמר המצטנפת על כסאה, \" איך הולך? אין באגים חדשים? התוכנה רצה?\"\n\"כן, בינתיים הכל רץ מעולה, ברוך ה'\" היא מחייכת לכיוונה, \" עבדנו טוב, בכל אופן...\"\n\"שמעתן?\" נויה קמה מכיסאה ומצטרפת לאספה הספונטנית, \" נעם מעדכנת כי ההעלאה לאוויר של התוכנה תתקיים ביום רביעי הקרוב בשעות הבוקר. נוכחות חובה,\" היא מגחכת, \"באמת? מי תוותר על הרגעים הללו, לאחר חודשים של עבודה מרתונית, לרוות קצת נחת וסיפוק מהתוצר המושלם...\"\nיום רביעי. תמר קופאת בתדהמה. יום רביעי הקרוב. מסיבת החומש של אליהו!\nכבר חודש ימים שהקטן מזמר את שירי המקהלה, לא גומר לתאר בעיניים בורקות את החומש, האותיות והמסיבה... כבר חודש ימים שמידי ערב כשהוא שוכב במיטה הוא מבקש שתספר לו קצת סיפורים על החומש.... והיא מספרת.\nמספרת על הר סיני כולו עשן, על קולות שופר וברקים ותורה שירדה לעולם. תורת חיים.\nהעיניים הקטנות בולעות בצימאון את הסיפורים, ואז נפתח הפה הקטן והמתוק , שכמו בכל ערב, שואל-\n\"ונכון, אימא, נכון שביום רביעי, במסיבה, גם אני אקבל את התורה, כמו אז, בהר סיני?\"\nנכון, היא מאשרת לו בחום, מצמידה נשיקה לוהטת ללחיו. במסיבת חומש גם אתה תקבל את התורה. ואתך אקבל אותה שוב גם אני, אימא שלך...\nועכשיו...יום רביעי.... ההעלאה של התוכנה. מאות שעות עבודה מאומצת, חשיבה מבריקה ופריצות דרך מהפכניות, הכל עומד מול עיניה וגודש את חלל המשרד, נעם הבוסית ודרישותיה הבלתי מתפשרות, החברות שממתינות ליומן הגדול ומביטות בה כעת בעיניים תמהות, הכל מסתובב מולה במחול מסחרר.\nאבל הרבה מעל כל זה מביטות אליה עכשיו עיניו הטהורות של אליהו, ילד יהודי שלה, ילד של מסיבת חומש.\nומול עיניו התמימות, שכל התום והתרגשות בעולם נשקפות מהן, היא יודעת שאין כאן בכלל שאלה. \"ביום רביעי לא אוכל להגיע להשקה\",  היא אומרת בשקט, קולה יציב והחלטי. \"יש לבן שלי מסיבת חומש \".\nהסערה השקטה שקמה במשרד לא מפתיעה אותה. גם לא התדהמה וחוסר ההבנה שבעיניהן של חברותיה. יש דברים שגם הן לא תוכלנה להבין. לא תזכינה.\n\"את רצינית, תמר?\" יעלי שואלת אותה בקול מוזר, \"מסיבת חומש... נו, בסדר, באמת משמח , אבל מכאן ועד להפסיד בשביל זה אירוע מכונן כמו הבוקר הזה.. באמת שאני לא מבינה אותך.\"\nריקי מושכת בכתפיה וחוזרת לעמדת המחשב, וממקומה תמר מצליחה לשמוע את ענבר מקשה בחוסר הבנה מודגש: \"אבל ריקי, אני לא מבינה, גם את ויעל ומירי חרדיות וכל זה. אז למה רק היא כזאת אחרת? שונה, נחרצת, לא מוותרת? גם אתן חרדיות אבל אתכן אני מרגישה ממש אחת מכן, ואתה, כל כך רחוק...\"\nדווקא המילים הללו זוקפות את גווה של תמר עוד קצת, מבהירות לה כי היא זוכה לגעת באמת ובטוהר, לא לערב טמא בטהור, להבדיל בין קודש לחול, בין מה שחשוב למה שחשוב באמת.\nהיא מנסחת כמה שורות קצרות ואדיבות בהן היא מודיעה על אי יכולתה להתייצב ביום רביעי באספת ההעלאה של התוכנה מסיבות אישיות. שולחת. יודעת כי הבקשה לא תוסיף לה מניות אצל הבוסית, בלשון המעטה, אבל היא מבקשת לה מניות אחרות. נצחיות.\nאחר הצהריים, כשהיא פותחת את דלת הבית ואליהו רץ אליה בחיבוק גדול, מנופף בהתרגשות בהזמנה למסיבת החומש, היא עוטפת אותו בחום, תולה את ההזמנה בחגיגיות על דלת הבית, והאושר שממלא את ליבה גדול ועמוק, ועוצמתי.\nהשבוע חולף במהירות, עמוס במטלות טכניות, היא עושה כל מה שביכולתה כדי להשביח ולהשלים את התוכנה. הקולגות מתפעלות שוב ושוב מכשרונה הנדיר, מתקשות להבין את הבחירה שלה.\n\" תמר, את באמת לא תהיי פה כשנעלה את התוכנה? כל הקרדיט מגיע לך!\" הן אומרות שוב ושוב, כל אחת בשפתה שלה, והיא רק מהנהנת.\nכן. היא לא תהיה שם, לשמוע את השבחים, מעצימים ככל שיהיו. היא תהיה אז במקום האמיתי שלה. אמא לילד טהור שחובק באהבה את החומש.\nהיא תהיה היכן שהיא רוצה באמת להיות, תאחז חזק במה שהוא תמצית הנשימה והחמצן, טל תחיה,\nהחיים בעצמם...\nביום רביעי היא יושבת שם, ביחד עם אליהו שלה, מקבלת שוב את התורה.\nרק עוד אמא אחת מתוך מאות, אמא שבעורקיה זורמת אהבת תורה אדירה, שכל הון לא ישווה לה.\nעיניה המצועפות בדמעות מביטות בילד שלה, עיניו זוהרות אליה ביומו הגדול, ידיו הקטנות חובקות חזק את החומש, ושירה טהורה גודשת את האולם ועולה עד שמי השמיים.\nשם, היא יודעת, אומר  קודשא בריך הוא לפמלייא שלו, חזו חזו בילדה חביבה שלי, שמשתכחת מעולם חומרני ובועט של שנות אלפיים, בו מטשטשים הגבולות, מתהפכים היוצרות ותורה- מה יהא עליה?\nוהיא -עוסקת בתורה שלי. תורתי- היא העסק שלה. רוח אפה ותמצית דמה, והיא יודעת כי התורה מבקשת לשכון רק היכן שנותנים לה מקום ,שמבקשים אותה יותר מכל...\nכי יש מי שרוצה לאחוז בכל מנעמי עולם הזה, לא להניח ידה מתענוגות, השגים וחולין,\nורוצה גם תורה.\nויש, יש מי שרוצה תורה. יותר מכל דבר אחר.\nורק למענה מבקשת גם כח, בריאות, אושר וחן, פרנסה וכבוד.\nאם היו בני אדם מרגישים... היום הזה היא מרגישה בכל ליבה. במתיקות וערבות ...מתלהטת אחריה. תורה, את כוללת כל הטובות שבעולם, ורק אותך אבקש."}, {"t": "בוקר · ספוקן", "cat": "ספוקן", "d": "קטע ספוקן קצבי על יום של אישה עובדת", "text": "שש. אפס אפס.\n(צליל שעון מעורר)\nבוקר אור\nפוקחת עין\nעייפה עדיין\nכבר בוקר\nאני בטח רואה עקום.\n-לקום!\nשקוע בשינה כל היקום.\n- לקום!\nחלום מתוק חי, רקום.\n- !!!לקום\nשש ודקה. לקום! לקום!\nקמה,\nלמה?\nכי אני אישה עובדת.\nעובדת! כן כן.\nעובדת! חן חן.\nעובדת! ולכן???\n\nלכן אני קמה עכשיו במרוצה\nמציצה\nלתוך חדר הילדים. חמודים.\nישנים כמו שרק ילדים ישנים\nישנים כמו שאני לא ישנתי שנים\nי-ש-נ-י-ם.\nכשיתעוררו בשבע ומחצה\nאני כבר אהיה אחרי המרוצה\nמרוצה\nואשב\nמול מחשב\nאחשב\nאחזיר ב\"השב\"\nבבבב\nבינתיים,\nכבר שש עשרים ושתיים,\nמשפשפת עיניים,\nשותה כוס מים,\nתיק על הכתפיים,\nרצה רצה רצה רצה רצה לתחנה\nהנה הוא! לא מאמינה\nהספקתי. איך? נדלג על המחזה,\nנס ראשון לבוקר זה.\n\nפותחת סידור , אהממ\nוגם לב פועם\nשל אם\nשיהיה להם ---\n\nרק טוב ושמחה\nאושר, ברכה\nרק הצלחה\nשיגדלו, יתעלו, יגלו, יקבלו\nלו....\n\nמבקשת\nלוחשת\nמתפללת\nמייחלת\n\nשאזכה לגדל\nולגדול\nלא לחדול....\n(שירי תפילה)\n\nכבר הגענו?נווווו...\n\nבוקר טוב,\nבוקר אור,\nבמה אוכל לעזור?\nצריכה.\nקבלה.\nבשמחה.\nצריכה.\nטבלה.\nבשמחה.\nצריכה.\nחשבונית.\nבשמחה.\nצריכה.\nניילונית.\nבשמחה.\nצריכה?\nבשמחה!!!\n(טרררר)\nהלו, כן, מה אתה שואל?\nהקפוצ'ון האפור של יואל\nהכחול של שמואל\nהחצאית של יעל!!!\nרק רגע, סליחה\nמה את צריכה?\nכן, בשמחה!\nאז אתה שומע ?\nגם פתק תכתוב,\nהוא התנהג טוב.\nהסוודר רטוב?\nטובבבבב\nתסתדרו? ה' ישמור,\nאני חייבת לגמור,\nיש כאן המון עבודה\nלהתראות, תודה!\nסליחה,\nאז מה את צריכה?\nשיחה?\nבשמחה!\nטרררר\nהלו, מותק ,\nאתה מאורגן?\nיוצא כבר לגן?\nואת מאורגנת?\nעם פתק לגננת?\nיופי, מתוקים,\nצדיקים,\nיום נהדר ומחכים!\nסליחה,\nממש סליחה,\nאז מה את צריכה?\nבשמחה!!!!\n\nצהריים טובים, כבר חזרתם\nאיך היה? נהנתם?\nאה, את רעבה?\nאז תגידי לאבא .\nאין בעיות,\nיש נקניקיות.\nטוב, מותק\nאני חייבת לנתק.\nאני בעבודה,\nחמודה,\nתודה!\n\nארבע אפס אפס.\nעובדת . עובדת. עובדת.\nלקום.\nעובדת. עובדת. עובדת.\nלקום.\nעובדת . עובדת. עובדת.\nלקום.\nל-ק-ו-ם! ל-ק-ו-ם!\nקמה,\nלמה?\nכי אני אישה אובדת.\nאובדת! כן כן.\nאובדת! חן חן.\nאובדת! ולכן???\nלכן אני קמה מהכיסא,\nננסה -\nלשכוח,\nמהלקוח\nאין לי כוח!\nלא הספקתי חצי מהמשימות\nאה, אה, אה, נ-ש-י-מ-ו-תתתת!!!\nהעובדת- עם האובדת\nבצוותא\nהולכות הביתה."}, {"t": "הרגלים", "cat": "שיר", "d": "שיר-מונולוג עם פזמון שפונה לכל אחת בקהל", "text": "השיר משלב מונולוג של אישה הכבולה בהרגלים שונים ורוצה להשתחרר מהם, במהלך השיר היא מפנה לעבר כל אחת מהקהל את השאלה- איך ניתן לשנות?                                       והפזמון הוא התשובה שמופנית אליה ואל כל אחת מהקהל.\n\nרק אישה אחת-\n יצור די רגיל,\nאבל זה לא, לא  עובר עם הגיל-\nהרגל ועוד אחד, זה כמו תרגיל:\nש-שווה הרבה-\n הרבה פחות\nואין הנחות:\nכל מה שאני רוצה זה להתעורר,\nלשנות, לשחרר...\nלה לה לה לה לה, לה לה\n\nלקרוא בלי סוף חדשות,\n להירדם עם עדשות,\n לקום בפעם עשירית-\n להפוך את הכרית,\nולבדוק בבהלה\nשהדלת נעולה\nושוב, וחוזר חלילה- (מלרע)\n\n וניחא אם פה זה היה נגמר,\nאבל תסכימו איתי שזה רע ומר,\nבלי קפה אנ'לא נושמת,\n מכל סיר אני טועמת-\nמה יש לך לומר?\n\nאז קומי, יש לך כוח לבחור,\nמבט קדימה ולא לאחור\nולהתחיל לפסוע צעד ,\nכן, כך,\nרק אחד קטן-\nעד לשינוי איתן,\nכן, כי להתחיל\n אף פעם לא מאוחר,\n היום ולא מחר!\nלה לה לה...לה לה לה לה לה\n\nבית, עבודה,\nואני כבר אבודה\nבמרוץ הזה שאין לו סוף,\nלא גומרת לקטר,\nכבר לא יכולה יותר\nוצריכה כוחות קצת לאסוף,\nשוב בודקת את המייל,\nרצה אחרי כל סייל,\nצוברת הר כלים -\nמשאירה  אותם ללֵיל,\n\nאו:\nמשקיעה ועד זריחה,\nלא רואה מיטה בליל\n\nאם גם לך כל זה מוכר-\nאז נגיע לעיקר\nמה עושים ואיך,\nשנוכל כבר לחייך?\n\nזה חזק וישר כמו סרגל,\nאם תחליטי לשנות ת'הרגל\nבלי להתחמק או להתגלגל,\nכן, את,\n כי יש לך כוח-\nלבחור לשמוח,\nרק-\nתרימי ראש לעבר המטרה\nאחת, ברורה!\nלה לה לה לה לה לה\n\nולפני כל פעולה\nמעומק לב שאי תפילה\nלמי שכל ההצלחה\nבידו היא, הפתוחה\n\nתתרגלי לומר תודה\nעל שפע טוב בלי מידה\nשינוי פנימי יציב, עמוק\nימלא אותך  סיפוק מתוק...."}, {"t": "רועה צאן וחליל", "cat": "תסריט ופאנל", "d": "תכנית סיום: תסריט צילומים, מלל ופאנל", "text": "תכנית סיום- פאנל רועה צאן וחליל.\nתסריט- הסרטות יום ראשון\nרועת צאן- קלוזים ושוטים- מנגנת, הולכת עם הצאן ומסתובבת, רחפן מלמעלה... דיבורים..\nלויים- מנגנים בכינורות ואז תולים אותם בצד ועומדים בעצב ומסתכלים... שרים: \"אם אשכחך ירושלים...\"\nמלל: (ברקע מנגינות מתאימות לפי הטקסט. חופה/ שמחה, שבת..)\nדעי לך, שכל רועה ורועה, יש לו ניגון מיוחד משלו\nדעי לך, שכל רגע ורגע, יש לו ניגון מיוחד משלו....\nכי אין לך ניגון שאין לו שעה, ואין לך שעה שאין לה ניגון...\n\nיש ניגון מתרפק של תפילה\nויש ניגון מרטיט של שעת נעילה\nיש ניגון מתלהט של שמחה\nויש ניגון של דמעה מלוחה---\n\nיש ניגון של חופה, מהדהד ועמוק\n ויש ניגון של שבת, מענג ומתוק\nיש ניגון שחרית ושל בין הערביים\nויש ניגון שמביא לך דמעות לעיניים---\n\nיש ניגון שפותח הלב בתשובה\nויש ניגון שהוא, הוא התשובה...\nיש ניגון....\n ויש לו כוח , השפעה ועוצמה\nמבעד לכל המחיצות הוא נשמע\n ניגון.  חודר עמוק לנשמה...\nמנחה: על הניגון הזה נרצה לשמוע היום. על הבמה איתנו נשים המגיעות מעולם השירה והמוזיקה. אלישבע פישר- מלחינה, מנגנת ומוזיקאית יוצאת אלינו מהאולפן. דבורי קב, עם הקלרינט ועם תוכן מפעים על כוחה של שירה ושושי ברוידא מעולם המוזיקה והריקוד , בשיח על אמת וערכים.\nשאלה ראשונה- אין לך ניגון שאין לו שעה. נשמח לשמוע מתי את פוגשת בניגון ושירה במסגרת עבודתך ובחייך האישיים, ומה חלקה של המוזיקה בחייך.\nקטע שני- מסך:\n\nמלל:\nהחליל הזה, היה עד\nלעולם מתוקן שאיננו\nבית בחירה שניצב ועומד\nבתפארתו על מכונו\n\nוניגון משתוקק לא נדם\nגם בצוק הימים וסערם\nהשב כהנים לעבודתם,\nולויים לשירם וזמרם---\n\n(מנגינה ברקע- והראנו בבנינו...)\n\nקטעים  שני לויים – גם ברקע טבעי וגם במסך ירוק\nמנחה: השירה הזאת- הטהורה והקדושה, קרובה להיכל התשובה, וכוחה עצום לפתוח את הלב להתעוררות, לתשוקה וקרבה... מה תוכלי לספר ולהוסיף לנו על כך מניסיונך העשיר?:)\n קטע שלישי- מסך.\nלחלל. חלילה....\nוכשהניגון הזה, הטהור, העדין משמיע קול צורמני, אחר...\nכשהחליל הזה, האיכותי והטוב ,קצת חורק...\nכשרוחות סערה אימתניות של דור אחרון מבקשות לשבור את החליל הזה, ממנו עלו בכל הדורות מנגינות של אהבת ה', קדושה וקרבה, ולחלל...(מנגנת קצת..) לחלל את הקודש. חלילה---\nקטע לויים שלישי\nמנחה- לחלל. לחלל את הקודש. חלילה. איך נשיר שירי נכר על אדמת ה'?\nמחול של בנות. ברקע- הרי יש שירים שכולן שומעות. ואולי הם עושים לי טוב על הלב... מתחברת, מתרגשת. וזה לא עניין של אסור ומותר.. אז- מה כן?\nקטע רביעי- החלילן.- הבת מנגנת על המסך וברקע קיריון והבת מציגה על הבמה.\nמנחה: כולנו רוצות לשמור על דור העתיד שלנו טהור. לשמר את המנגינה קדושה . אבל לפעמים זה קשה... אילו עצות מעשיות תוכלי לתת לנו איך לשמר את הניגון היהודי טהור וזך, לדורות?\nבין לבין קטעי שירה. בסיום שיר סיום והרקדה."}];renderDocs();
+
+/* testimonials */
+const Q=[['רבקי קנפל','','כתיבה בלב שקט','היחידה שאני מוכנה להמליץ עליה לכתיבה בלב שקט, זו שרי. כתיבה שנונה, מדויקת, מעמיקה, אבל תמיד נשארת מובנת ובגובה העיניים! אבל זה לא רק זה: זה התקתוק, השירות והמוכנות לתקן ולשייף בדיוק לפי בקשת הלקוח, עד לתוצאה המושלמת! ממליצה בחום!!'],
+['מיכל','תיכון אהל חיה, נתיבות','ההמנונים הכי מדויקים','שרי מדהימה, יש לך את זה. בהסבר של כמה מילים מצידי הפקת את ההמנונים הכי מדויקים ומתאימים עבורנו. קלעת למסרים, העברת אותם עם הומור ושנינות. שילוב של פסוקים וציטוטים, זה משהו מיוחד אצלך, שמעלה את רמת התוצר באופן משמעותי! אז תודה!'],
+['שרי גרינברג','ארחות חינוך','זריזה ברמות!','שרי מוכשרת ברמות!! קולטת תוך רגע מה צריכה ואיזה סגנון. כתיבה ברמה גבוהה, מקצועית, יפה וזורמת! זריזה ברמות! ממליצה עליה בחום!!'],
+['רותי חפץ','','יש לך את זה בגדול','שרי המדהימה, היה תענוג לעבוד איתך!! בשיחה שלנו קלטת ברגע את הסגנון והמטרה, ואחר כך עבדת במקצועיות וכישרון נדירים, בדדליין קצר ועמוס. אהבתי את התוצאה מהרגע הראשון. יש לך את זה בגדול!!! תמשיכי לכתוב ולעשות רק טוב. בהערכה!!'],
+['יהודה ובײלי דויטש','','בשיחה אחת, ושיר מוכן','שרי היא מעבר למקצועיות. בשיחה אחת הסברתי לה כיוון, ותוך זמן קצר מאוד היא שלחה לי שיר בנוי, כתוב כמו שרציתי שיהיה, שנון, עם נושא צמוד למנגינה בטוב טעם. מעבר למקצועיות היא אשת שיחה מבינה עניין, כיף לשוחח איתה, ועומדת בזמנים. ממליצה בחום.'],
+['רחל','תנועת בתיה','רעיונות מחוץ לקופסה','שרי היא כותבת ומפיקת תוכן מעולה. יש לה רעיונות מחוץ לקופסה, היא גם רכזת חברתית מוצלחת. יצירתית מאוד. נותנת שירות מצוין ועומדת בזמנים.'],
+['יעל פינס','','וואו, איזו כתיבה!','וואו איזו כתיבה! תענוג. עומק ושנינות וחריזה ונגיעה עמוק ברגש. וואו.']];
+const col=['#FF5F3F','#068EA6','#1D1D1B'];
+$('#quotes').innerHTML=Q.map(([n,o,h,t],i)=>`<article class="q"><strong>${h}</strong><p>${t}</p><footer><span class="av" style="background:${col[i%3]}">${n[0]}</span><span><b>${n}</b>${o?`<small>${o}</small>`:''}</span></footer></article>`).join('');
+const qs=$('#quotes');const qstep=dir=>{const c=qs.querySelector('.q');qs.scrollBy({left:dir*(c.offsetWidth+18),behavior:reduce?'auto':'smooth'})};
+$('#qn').addEventListener('click',()=>qstep(-1));$('#qp').addEventListener('click',()=>qstep(1));
+qs.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')qstep(-1);if(e.key==='ArrowRight')qstep(1)});
+
+/* order form */
+const F=[['nm','שם הרכזת',1],['org','שם המוסד',1],['mel','מנגינה',0],['cnt','תוכן השיר',1],['goal','יעד',0],['due','למתי צריכה',1],['ph','טלפון לחזרה',0]];
+const val=id=>$('#'+id).value.trim();
+const dueTxt=()=>{const v=val('due');if(!v)return'';const [y,m,dd]=v.split('-');return `${dd}/${m}/${y}`};
+const body=()=>'שלום שרי,\nאשמח להזמין כתיבה:\n\n'+F.map(([id,l])=>`${l}: ${id==='due'?dueTxt():val(id)||'-'}`).join('\n')+'\n\nתודה רבה!';
+const subj=()=>`הזמנת כתיבה – ${val('org')||'מוסד'}${val('nm')?' ('+val('nm')+')':''}`;
+const upd=()=>{$('#gm').href=`https://mail.google.com/mail/?view=cm&fs=1&to=${MAIL}&su=${encodeURIComponent(subj())}&body=${encodeURIComponent(body())}`};
+const check=()=>{let ok=true,first=null;F.forEach(([id,,req])=>{const w=$('#'+id).closest('.f');const bad=req&&!val(id);w.classList.toggle('bad',bad);if(bad){ok=false;first=first||$('#'+id)}});if(first)first.focus();return ok};
+$('#f').addEventListener('input',e=>{upd();const w=e.target.closest('.f');if(w&&e.target.value.trim())w.classList.remove('bad')});
+upd();
+$('#gm').addEventListener('click',e=>{upd();if(!check()){e.preventDefault();return}
+  const s=$('#sent');s.textContent='נפתח Gmail עם ההזמנה. נשאר ללחוץ "שליחה" שם.';s.classList.add('show')});
+$('#f').addEventListener('submit',e=>e.preventDefault());
+$('#due').min=new Date().toISOString().slice(0,10);
+
+/* scroll ink line */
+const ink=$('#ink');addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;ink.style.width=(m>0?scrollY/m*100:0)+'%'},{passive:true});
+}
+</script>
+</body>
+</html>
