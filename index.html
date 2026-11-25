@@ -304,8 +304,10 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 .arrows button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .arrows button:hover{background:var(--coral);color:#fff;transform:translateY(-2px)}
 /* services: current-card frame */
-.svc article{border:2px solid transparent;padding:24px;transition:transform .2s,box-shadow .2s,border-color .2s;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(var(--bg2),var(--bg2)) border-box}
-.svc article:hover,.svc article:focus-within,.svc article:active{background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(135deg,var(--coral),var(--teal)) border-box;box-shadow:0 0 0 5px rgba(20,179,196,.12)}
+.svc article{position:relative;border:0;padding:26px;background:var(--bg2);transition:transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .8s ease}
+.svc article::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:linear-gradient(135deg,var(--coral),var(--teal));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transform:scale(.97);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.svc article:hover,.svc article:focus-within,.svc article:active{box-shadow:0 0 0 6px rgba(20,179,196,.12);transform:translateY(-3px)}
+.svc article:hover::after,.svc article:focus-within::after,.svc article:active::after{opacity:1;transform:none}
 /* about logo hover */
 .frame{position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .frame::before,.frame::after{display:block;content:"";position:absolute;inset:-12px;border-radius:38px;border:3px solid var(--coral);opacity:0;transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none;background:none;width:auto;height:auto}
@@ -453,7 +455,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const start=()=>{fit();setTimeout(mark,1500)};
  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(start);
  addEventListener('resize',fit);
- if(!reduce)setInterval(()=>{k++;fit();mark();if(k===n){setTimeout(()=>{rail.style.transition='none';slot.style.transition='none';k=0;fit();void rail.offsetWidth;rail.style.transition='';slot.style.transition=''},800)}},2200)}
+ if(!reduce)setInterval(()=>{k++;fit();mark();if(k===n){setTimeout(()=>{rail.style.transition='none';slot.style.transition='none';k=0;fit();void rail.offsetWidth;rail.style.transition='';slot.style.transition=''},800)}},1900)}
 
 /* services */
 const svc=[['ש','שירים והמנונים','המנון מוסדי, שיר לסיום או לכבוד אירוע. נכנס בדיוק למנגינה, עם מסר חד וחריזה שזורמת.'],
