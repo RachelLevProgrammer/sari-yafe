@@ -293,6 +293,36 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(max-width:860px){.hero{min-height:0}}
 @media(prefers-reduced-motion:reduce){.w{opacity:1;transform:none}.slot::after{transform:none}}
+
+/* ===== requested tweaks ===== */
+.herosec.band{padding-top:clamp(14px,2.4vh,30px);padding-bottom:clamp(30px,5vh,56px)}
+.hero{min-height:0;justify-content:flex-start}
+.hero .mark{margin-bottom:14px}.hero .kicker{margin-bottom:10px}.hero .lede{margin:18px auto 24px}
+.btn .ar,.open .ar{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+.btn:hover .ar,.doc:hover .ar{transform:translateX(-5px)}
+.arrows button{display:grid;place-items:center;padding:0;border:0;background:#fff;color:var(--ink);box-shadow:0 8px 20px -10px rgba(29,29,27,.45),0 0 0 1px var(--line);transition:transform .25s,background .25s,color .25s}
+.arrows button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.arrows button:hover{background:var(--coral);color:#fff;transform:translateY(-2px)}
+/* services: current-card frame */
+.svc article{border:2px solid transparent;padding:24px;transition:transform .2s,box-shadow .2s,border-color .2s;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(var(--bg2),var(--bg2)) border-box}
+.svc article:hover,.svc article:focus-within,.svc article:active{background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(135deg,var(--coral),var(--teal)) border-box;box-shadow:0 0 0 5px rgba(20,179,196,.12)}
+/* about logo hover */
+.frame{position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.frame::before,.frame::after{display:block;content:"";position:absolute;inset:-12px;border-radius:38px;border:3px solid var(--coral);opacity:0;transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none;background:none;width:auto;height:auto}
+.frame::before{transform:rotate(-4deg) scale(.95)}
+.frame::after{border-color:var(--teal);transform:rotate(4deg) scale(.95)}
+.frame:hover{transform:rotate(-2.5deg) scale(1.03)}
+.frame:hover::before{opacity:1;transform:rotate(-3deg) scale(1)}
+.frame:hover::after{opacity:1;transform:rotate(3deg) scale(1)}
+/* about heading underline */
+#about h2{width:fit-content;position:relative}
+#about h2::after{content:"";display:block;height:5px;border-radius:9px;margin-top:12px;background:linear-gradient(90deg,var(--coral),var(--teal));transform:scaleX(0);transform-origin:100% 50%;transition:transform 1.1s .2s cubic-bezier(.3,.7,.2,1)}
+#about h2.in::after{transform:scaleX(1)}
+/* steps circles */
+.step .t{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.step:hover .t{transform:scale(1.14);box-shadow:0 0 0 7px rgba(255,95,63,.22),0 0 26px rgba(255,95,63,.45)}
+.step:last-child:hover .t{box-shadow:0 0 0 7px rgba(20,179,196,.25),0 0 26px rgba(20,179,196,.5)}
+@media(prefers-reduced-motion:reduce){#about h2::after{transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -312,7 +342,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
       <span class="sub"><span class="w" style="--i:4">יותר</span> <span class="w" style="--i:5">מאלף</span> <span class="w" style="--i:6">מילים.</span> <span class="w tl" style="--i:8">מילה</span> <span class="w tl" style="--i:9">שלי.</span></span>
     </h1>
     <p class="lede w" style="--i:11">שירים, המנונים, מחזמרים, ספוקן ותכניות שלמות. כתוב במיוחד בשבילכן, מדויק למסר ולמנגינה ומלוטש עד הסוף.</p>
-    <div class="cta-row w" style="--i:12"><a class="btn pri" href="#order">להזמנת כתיבה ←</a><a class="btn sec" href="#work">להתרשמות מעבודות</a></div>
+    <div class="cta-row w" style="--i:12"><a class="btn pri" href="#order">להזמנת כתיבה <svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 5l-7 7 7 7"/></svg></a><a class="btn sec" href="#work">להתרשמות מעבודות</a></div>
   </div>
 </div></section>
 
@@ -364,7 +394,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 
 <section class="band quotes-band" id="love"><div class="wrap">
   <div class="qhead"><div><h2>מה אומרות הרכזות</h2><p class="lede" style="margin-top:12px">מכתבים אמיתיים שהגיעו לתיבת המייל.</p></div>
-  <div class="arrows"><button id="qn" aria-label="הבא">→</button><button id="qp" aria-label="הקודם">←</button></div></div>
+  <div class="arrows"><button id="qn" aria-label="הבא"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><button id="qp" aria-label="הקודם"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button></div></div>
   <div class="quotes" id="quotes" tabindex="0"></div>
 </div></section>
 
@@ -423,7 +453,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const start=()=>{fit();setTimeout(mark,1500)};
  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(start);
  addEventListener('resize',fit);
- if(!reduce)setInterval(()=>{k++;fit();mark();if(k===n){setTimeout(()=>{rail.style.transition='none';slot.style.transition='none';k=0;fit();void rail.offsetWidth;rail.style.transition='';slot.style.transition=''},800)}},2800)}
+ if(!reduce)setInterval(()=>{k++;fit();mark();if(k===n){setTimeout(()=>{rail.style.transition='none';slot.style.transition='none';k=0;fit();void rail.offsetWidth;rail.style.transition='';slot.style.transition=''},800)}},2200)}
 
 /* services */
 const svc=[['ש','שירים והמנונים','המנון מוסדי, שיר לסיום או לכבוד אירוע. נכנס בדיוק למנגינה, עם מסר חד וחריזה שזורמת.'],
@@ -481,7 +511,7 @@ $('#bar').addEventListener('click',e=>{if(!au.duration)return;const r=e.currentT
 /* documents */
 let docs=[];
 const renderDocs=()=>{const all=docs.concat([{t:'זוכה ורואה',cat:'סיפור',d:'סיפור עתידני על סבתא, נכדה ומה שרואים באמת',pdf:4}]);
-  $('#docs').innerHTML=all.map((x,i)=>`<button class="doc" data-i="${i}"><span class="c">${esc(x.cat)}</span><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><span class="open">לקריאה ←</span></button>`).join('');
+  $('#docs').innerHTML=all.map((x,i)=>`<button class="doc" data-i="${i}"><span class="c">${esc(x.cat)}</span><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p><span class="open">לקריאה <svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 5l-7 7 7 7"/></svg></span></button>`).join('');
   $('#docs').onclick=e=>{const b=e.target.closest('.doc');if(!b)return;const x=all[b.dataset.i];
     if(x.pdf){let p='';for(let n=1;n<=x.pdf;n++)p+=`<img src="${U(B.doc[n-1])}" alt="עמוד ${n}" draggable="false">`;openV(x.t,`<div class="pages">${p}<div class="wm"></div></div>`)}
     else openV(x.t,`<div class="text">${esc(x.text)}<div class="wm"></div></div>`)}};
@@ -517,6 +547,8 @@ $('#f').addEventListener('submit',e=>e.preventDefault());
 /* scroll ink line */
 const ink=$('#ink');addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;ink.style.width=(m>0?scrollY/m*100:0)+'%'},{passive:true});
 }
+
+{const h=document.querySelector('#about h2');if(h){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){h.classList.add('in');o.disconnect()}},{threshold:.6});o.observe(h)}}
 </script>
 </body>
 </html>
