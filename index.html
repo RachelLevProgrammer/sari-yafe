@@ -298,7 +298,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 <body>
 <header><div class="wrap">
   <a class="brand" href="#top" aria-label="שרי יפה"><span class="tile"><img src="m/mark.jpg" alt="שרי יפה" draggable="false"></span></a>
-  <nav aria-label="ניווט"><a href="#services">מה אני כותבת</a><a href="#how">איך זה עובד</a><a href="#work">עבודות</a><a href="#about">עליי</a><a href="#love">ממליצות</a></nav>
+  <nav aria-label="ניווט"><a href="#services">מה אני כותבת</a><a href="#how">איך זה עובד</a><a href="#work">עבודות</a><a href="#about">עלי</a><a href="#love">ממליצות</a></nav>
   <a class="btn pri" href="#order">להזמנת כתיבה</a>
 </div><i id="ink"></i></header>
 
@@ -312,7 +312,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
       <span class="sub"><span class="w" style="--i:4">יותר</span> <span class="w" style="--i:5">מאלף</span> <span class="w" style="--i:6">מילים.</span> <span class="w tl" style="--i:8">מילה</span> <span class="w tl" style="--i:9">שלי.</span></span>
     </h1>
     <p class="lede w" style="--i:11">שירים, המנונים, מחזמרים, ספוקן ותכניות שלמות. כתוב במיוחד בשבילכן, מדויק למסר ולמנגינה ומלוטש עד הסוף.</p>
-    <div class="cta-row w" style="--i:12"><a class="btn pri" href="#order">להזמנת כתיבה ←</a><a class="btn sec" href="#work">לשמוע עבודות</a></div>
+    <div class="cta-row w" style="--i:12"><a class="btn pri" href="#order">להזמנת כתיבה ←</a><a class="btn sec" href="#work">להתרשמות מעבודות</a></div>
   </div>
 </div></section>
 
@@ -355,7 +355,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 <section class="band" id="about" style="background:var(--bg2)"><div class="wrap about">
   <div class="frame"><div class="tile"><img src="m/mark.jpg" alt="הלוגו של שרי יפה" draggable="false"></div></div>
   <div>
-    <h2>קצת עליי</h2>
+    <h2>קצת עלי</h2>
     <p class="lede" style="margin-top:18px">אני כותבת ומפיקה תוכן, עם ניסיון רב בכל סוגי הכתיבה: שירים והמנונים, מחזמרים, ספוקן, סיפורים, תסריטים ותכניות שלמות, לסמינרים, לבתי ספר ולמוסדות.</p>
     <p class="lede">מה שמייחד אותי הוא הדיוק וגם המהירות. בשיחה אחת אני קולטת את הסגנון ואת המטרה, משלבת פסוקים, ציטוטים והומור במקום הנכון, ומחזירה עבודה מלוטשת, בדרך כלל תוך 24 שעות.</p>
     
@@ -387,11 +387,8 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
       <div class="f"><label for="goal">יעד</label><input id="goal" placeholder="סיום שנה, מסיבת חנוכה..."></div>
     </div>
     <div class="f"><label for="cnt">תוכן השיר<em>*</em></label><textarea id="cnt" placeholder="על מה השיר, מסרים, שמות, פסוקים, משפטים שחשוב שיופיעו..."></textarea><span class="err">כמה מילים על התוכן יעזרו לי מאוד</span></div>
-    <div class="grid2">
-      <div class="f"><label for="due">למתי צריכה?<em>*</em></label><input id="due" type="date"><span class="err">נא לבחור תאריך</span></div>
-      <div class="f"><label for="ph">טלפון לחזרה</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" dir="ltr"></div>
-    </div>
-    <a class="btn pri go" id="gm" target="_blank" rel="noopener" href="#">שליחת ההזמנה במייל</a>
+    <div class="f"><label for="ph">טלפון לחזרה</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" dir="ltr"></div>
+    <a class="btn pri go" id="gm" target="_blank" rel="noopener" href="#">שליחת מייל</a>
     
     <div id="sent" role="status"></div>
   </form>
@@ -505,10 +502,9 @@ $('#qn').addEventListener('click',()=>qstep(-1));$('#qp').addEventListener('clic
 qs.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')qstep(-1);if(e.key==='ArrowRight')qstep(1)});
 
 /* order form */
-const F=[['nm','שם הרכזת',1],['org','שם המוסד',1],['mel','מנגינה',0],['cnt','תוכן השיר',1],['goal','יעד',0],['due','למתי צריכה',1],['ph','טלפון לחזרה',0]];
+const F=[['nm','שם הרכזת',1],['org','שם המוסד',1],['mel','מנגינה',0],['cnt','תוכן השיר',1],['goal','יעד',0],['ph','טלפון לחזרה',0]];
 const val=id=>$('#'+id).value.trim();
-const dueTxt=()=>{const v=val('due');if(!v)return'';const [y,m,dd]=v.split('-');return `${dd}/${m}/${y}`};
-const body=()=>'שלום שרי,\nאשמח להזמין כתיבה:\n\n'+F.map(([id,l])=>`${l}: ${id==='due'?dueTxt():val(id)||'-'}`).join('\n')+'\n\nתודה רבה!';
+const body=()=>'שלום שרי,\nאשמח להזמין כתיבה:\n\n'+F.map(([id,l])=>`${l}: ${val(id)||'-'}`).join('\n')+'\n\nתודה רבה!';
 const subj=()=>`הזמנת כתיבה – ${val('org')||'מוסד'}${val('nm')?' ('+val('nm')+')':''}`;
 const upd=()=>{$('#gm').href=`https://mail.google.com/mail/?view=cm&fs=1&to=${MAIL}&su=${encodeURIComponent(subj())}&body=${encodeURIComponent(body())}`};
 const check=()=>{let ok=true,first=null;F.forEach(([id,,req])=>{const w=$('#'+id).closest('.f');const bad=req&&!val(id);w.classList.toggle('bad',bad);if(bad){ok=false;first=first||$('#'+id)}});if(first)first.focus();return ok};
@@ -517,7 +513,6 @@ upd();
 $('#gm').addEventListener('click',e=>{upd();if(!check()){e.preventDefault();return}
   const s=$('#sent');s.textContent='נפתח Gmail עם ההזמנה. נשאר ללחוץ "שליחה" שם.';s.classList.add('show')});
 $('#f').addEventListener('submit',e=>e.preventDefault());
-$('#due').min=new Date().toISOString().slice(0,10);
 
 /* scroll ink line */
 const ink=$('#ink');addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;ink.style.width=(m>0?scrollY/m*100:0)+'%'},{passive:true});
