@@ -325,6 +325,22 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 .step:hover .t{transform:scale(1.14);box-shadow:0 0 0 7px rgba(255,95,63,.22),0 0 26px rgba(255,95,63,.45)}
 .step:last-child:hover .t{box-shadow:0 0 0 7px rgba(20,179,196,.25),0 0 26px rgba(20,179,196,.5)}
 @media(prefers-reduced-motion:reduce){#about h2::after{transform:none;transition:none}}
+
+/* steps as cards + white credit */
+.foot .credit p,.foot .credit b,.foot .credit a{color:#fff}
+.foot .credit a{text-decoration-color:rgba(255,255,255,.45);text-underline-offset:4px}
+.how{background:linear-gradient(180deg,#e8f8fa,#dcf1f4)}
+.steps{gap:20px;margin-top:64px}
+.steps::before{top:0;height:4px;border-radius:4px;inset-inline:4%}
+.step{background:#fff;border-radius:28px;padding:0 22px 30px;box-shadow:0 1px 2px rgba(29,29,27,.05),0 26px 50px -30px rgba(29,29,27,.35);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;overflow:visible;border-top:4px solid var(--coral)}
+.step:nth-child(2){border-top-color:#e8805f}.step:nth-child(3){border-top-color:#6aa39a}.step:last-child{border-top-color:var(--teal)}
+.step:hover{transform:translateY(-8px);box-shadow:0 1px 2px rgba(29,29,27,.05),0 36px 60px -30px rgba(29,29,27,.45)}
+.step .t{margin-top:-32px;width:64px;min-width:64px;height:64px;font-size:26px;border:4px solid var(--coral);background:#fff;box-shadow:0 14px 28px -12px rgba(255,95,63,.7)}
+.step:last-child .t{box-shadow:0 14px 28px -12px rgba(20,179,196,.8);background:var(--teal);border-color:#fff;outline:4px solid var(--teal)}
+.step h3{margin:20px 0 8px;font-size:22px}
+.step p{font-size:16.5px;line-height:1.55}
+.step::after{content:"";display:block;width:34px;height:4px;border-radius:4px;margin:18px auto 0;background:linear-gradient(90deg,var(--coral),var(--teal));opacity:.85}
+@media(max-width:760px){.steps{gap:42px;margin-top:48px}.steps::before{display:none}.step{display:block;text-align:center;padding:0 22px 28px}.step h3{margin:18px 0 8px}}
 </style>
 </head>
 <body>
@@ -431,7 +447,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
   <div style="display:flex;gap:16px;align-items:center"><span class="tile"><img src="m/mark.jpg" alt="" draggable="false"></span><div><b class="r" style="font-size:20px">שרי יפה</b><p>יותר מאלף מילים. מילה שלי.</p></div></div>
   <p>© כל הזכויות שמורות לשרי יפה. אין להעתיק או להשתמש בתכנים ללא אישור.</p>
 </div>
-<div class="wrap credit"><p>האתר נבנה על ידי <b>רחל לב</b>. רוצים גם דף נחיתה או אתר משלכם? דברו איתי <a class="mono" href="tel:0556748072">055-6748072</a> או במייל <a class="mono" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=rl56748072@gmail.com">rl56748072@gmail.com</a></p></div></footer>
+<div class="wrap credit"><p>הדף נבנה על ידי <b>רחל לב</b>. רוצים גם דף נחיתה או אתר משלכם? דברו איתי: <a class="mono" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=rl56748072@gmail.com">rl56748072@gmail.com</a> · <a class="mono" href="tel:0556748072">055-6748072</a></p></div></footer>
 
 <div class="viewer" id="vw" role="dialog" aria-modal="true" aria-labelledby="vt">
   <div class="vbox">
@@ -524,7 +540,7 @@ const Q=[['רבקי קנפל','','כתיבה בלב שקט','היחידה שאנ
 ['מיכל','תיכון אהל חיה, נתיבות','ההמנונים הכי מדויקים','שרי מדהימה, יש לך את זה. בהסבר של כמה מילים מצידי הפקת את ההמנונים הכי מדויקים ומתאימים עבורנו. קלעת למסרים, העברת אותם עם הומור ושנינות. שילוב של פסוקים וציטוטים, זה משהו מיוחד אצלך, שמעלה את רמת התוצר באופן משמעותי! אז תודה!'],
 ['שרי גרינברג','ארחות חינוך','זריזה ברמות!','שרי מוכשרת ברמות!! קולטת תוך רגע מה צריכה ואיזה סגנון. כתיבה ברמה גבוהה, מקצועית, יפה וזורמת! זריזה ברמות! ממליצה עליה בחום!!'],
 ['רותי חפץ','','יש לך את זה בגדול','שרי המדהימה, היה תענוג לעבוד איתך!! בשיחה שלנו קלטת ברגע את הסגנון והמטרה, ואחר כך עבדת במקצועיות וכישרון נדירים, בדדליין קצר ועמוס. אהבתי את התוצאה מהרגע הראשון. יש לך את זה בגדול!!! תמשיכי לכתוב ולעשות רק טוב. בהערכה!!'],
-['יהודה ובײלי דויטש','','בשיחה אחת, ושיר מוכן','שרי היא מעבר למקצועיות. בשיחה אחת הסברתי לה כיוון, ותוך זמן קצר מאוד היא שלחה לי שיר בנוי, כתוב כמו שרציתי שיהיה, שנון, עם נושא צמוד למנגינה בטוב טעם. מעבר למקצועיות היא אשת שיחה מבינה עניין, כיף לשוחח איתה, ועומדת בזמנים. ממליצה בחום.'],
+['בײלי דויטש','','בשיחה אחת, ושיר מוכן','שרי היא מעבר למקצועיות. בשיחה אחת הסברתי לה כיוון, ותוך זמן קצר מאוד היא שלחה לי שיר בנוי, כתוב כמו שרציתי שיהיה, שנון, עם נושא צמוד למנגינה בטוב טעם. מעבר למקצועיות היא אשת שיחה מבינה עניין, כיף לשוחח איתה, ועומדת בזמנים. ממליצה בחום.'],
 ['רחל','תנועת בתיה','רעיונות מחוץ לקופסה','שרי היא כותבת ומפיקת תוכן מעולה. יש לה רעיונות מחוץ לקופסה, היא גם רכזת חברתית מוצלחת. יצירתית מאוד. נותנת שירות מצוין ועומדת בזמנים.'],
 ['יעל פינס','','וואו, איזו כתיבה!','וואו איזו כתיבה! תענוג. עומק ושנינות וחריזה ונגיעה עמוק ברגש. וואו.']];
 const col=['#FF5F3F','#14B3C4','#1D1D1B'];
