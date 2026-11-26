@@ -561,7 +561,7 @@ qs.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')qstep(-1);if(e.key==='A
 /* order form */
 const F=[['nm','שם הרכזת',1],['org','שם המוסד',1],['mel','מנגינה',0],['cnt','תוכן השיר',1],['goal','יעד',0],['ph','טלפון לחזרה',0]];
 const val=id=>$('#'+id).value.trim();
-const body=()=>'שלום שרי,\nאשמח להזמין כתיבה:\n\n'+F.map(([id,l])=>`${l}: ${val(id)||'-'}`).join('\n')+'\n\nתודה רבה!';
+const body=()=>'שלום שרי,\nאשמח להזמין כתיבה:\n\n'+F.map(([id,l])=>`${l}: ${val(id)||'-'}`).join('\n')+'\n\nיש לצרף קובץ של השיר המקורי.\n\nתודה רבה!';
 const subj=()=>`הזמנת כתיבה – ${val('org')||'מוסד'}${val('nm')?' ('+val('nm')+')':''}`;
 const upd=()=>{$('#gm').href=`https://mail.google.com/mail/?view=cm&fs=1&to=${MAIL}&su=${encodeURIComponent(subj())}&body=${encodeURIComponent(body())}`};
 const check=()=>{let ok=true,first=null;F.forEach(([id,,req])=>{const w=$('#'+id).closest('.f');const bad=req&&!val(id);w.classList.toggle('bad',bad);if(bad){ok=false;first=first||$('#'+id)}});if(first)first.focus();return ok};
