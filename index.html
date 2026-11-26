@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>שרי יפה · כתיבה ותוכן</title>
+<title>מסע של אלף מילים - מתחיל כאן :) ←</title>
+<meta property="og:title" content="מסע של אלף מילים - מתחיל כאן :) ←">
 <meta name="description" content="שרי יפה – כתיבת שירים, המנונים, מחזמרים, ספוקן ותכניות לסמינרים, בתי ספר ומוסדות. בדרך כלל מוכן תוך 24 שעות.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
@@ -378,6 +379,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-p="pv">וידאו ומחזמרים</button>
     <button role="tab" aria-selected="false" data-p="pa">שירים לשמיעה</button>
+    <button role="tab" aria-selected="false" data-p="pb">שירי בת מצווה</button>
     <button role="tab" aria-selected="false" data-p="pd">כתיבה לקריאה</button>
     <button role="tab" aria-selected="false" data-p="all">הכל</button>
   </div>
@@ -393,6 +395,16 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
       <audio id="au" preload="none" controlslist="nodownload"></audio>
     </div>
   </div>
+  <div class="pane" id="pb" hidden><h3 class="ph">שירי בת מצווה</h3>
+    <div class="player" id="playerb">
+      <div class="now"><button class="big-play" id="bpb" aria-label="ניגון"></button>
+        <div><h3><span id="ntb">בחרי שיר מהרשימה</span><span class="eq"><b></b><b></b><b></b></span></h3>
+        <div class="bar" id="barb"><i id="progb"></i></div><div class="times"><span id="curb">0:00</span><span id="durb">0:00</span></div></div>
+      </div>
+      <ol class="tracks" id="tracksb"></ol>
+      <audio id="aub" preload="none" controlslist="nodownload"></audio>
+    </div>
+  </div>
   <div class="pane" id="pd" hidden><h3 class="ph">כתיבה לקריאה</h3><div class="docs" id="docs"></div></div>
 </div></section>
 
@@ -401,6 +413,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
   <div>
     <h2>קצת עלי</h2>
     <p class="lede" style="margin-top:18px">אני כותבת ומפיקה תוכן, עם ניסיון רב בכל סוגי הכתיבה: שירים והמנונים, מחזמרים, ספוקן, סיפורים, תסריטים ותכניות שלמות, לסמינרים, לבתי ספר ולמוסדות.</p>
+    <p class="lede" style="margin-top:-6px;font-size:14px;font-weight:700;color:var(--ink)">* שימו לב: השירה היא שירת נשים.</p>
     <p class="lede">מה שמייחד אותי הוא הדיוק וגם המהירות. בשיחה אחת אני קולטת את הסגנון ואת המטרה, משלבת פסוקים, ציטוטים והומור במקום הנכון, ומחזירה עבודה מלוטשת, בדרך כלל תוך 24 שעות.</p>
     
   </div>
@@ -563,6 +576,24 @@ const ink=$('#ink');addEventListener('scroll',()=>{const m=document.documentElem
 }
 
 {const h=document.querySelector('#about h2');if(h){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){h.classList.add('in');o.disconnect()}},{threshold:.6});o.observe(h)}}
+
+/* bat mitzvah songs player */
+{const $=q=>document.querySelector(q),fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+const tb=[['שיר בת מצווה · א׳','m/bm1.mp3',227],['שיר בת מצווה · ב׳','m/bm2.mp3',278],['שיר בת מצווה · ג׳','m/bm3.mp3',246]];
+const a=$('#aub'),b=$('#bpb');let c=-1;
+$('#tracksb').innerHTML=tb.map(([t,,d],i)=>`<li><button data-i="${i}"><span class="n">${i+1}</span><span>${t}</span><span class="d">${fmt(d)}</span></button></li>`).join('');
+const ld=i=>{c=i;a.src=tb[i][1];$('#ntb').textContent=tb[i][0];$('#durb').textContent=fmt(tb[i][2]);document.querySelectorAll('#tracksb button').forEach(x=>x.setAttribute('aria-current',+x.dataset.i===i))};
+const pl=()=>{$('#au').pause();a.play().catch(()=>{})};
+$('#tracksb').addEventListener('click',e=>{const x=e.target.closest('button');if(!x)return;const i=+x.dataset.i;if(i===c){a.paused?pl():a.pause();return}ld(i);pl()});
+b.addEventListener('click',()=>{if(c<0)ld(0);a.paused?pl():a.pause()});
+a.addEventListener('play',()=>{b.classList.add('on');$('#playerb').classList.add('on-air')});
+a.addEventListener('pause',()=>{b.classList.remove('on');$('#playerb').classList.remove('on-air')});
+a.addEventListener('timeupdate',()=>{$('#curb').textContent=fmt(a.currentTime);if(a.duration)$('#progb').style.width=(a.currentTime/a.duration*100)+'%'});
+a.addEventListener('ended',()=>{if(c<tb.length-1){ld(c+1);pl()}});
+$('#barb').addEventListener('click',e=>{if(!a.duration)return;const r=e.currentTarget.getBoundingClientRect();a.currentTime=(r.right-e.clientX)/r.width*a.duration});
+$('#au').addEventListener('play',()=>a.pause());
+const ov=$('#vw');new MutationObserver(()=>{if(ov.classList.contains('open'))a.pause()}).observe(ov,{attributes:true,attributeFilter:['class']});
+}
 </script>
 </body>
 </html>
