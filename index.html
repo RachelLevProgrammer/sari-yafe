@@ -376,7 +376,7 @@ h1 .sub{display:block;margin-top:.3em;font-size:max(.34em,19px);font-weight:700;
 <section class="band" id="work"><div class="wrap">
   <h2>להתרשם מקרוב</h2>
   <p class="lede" style="margin-top:14px">מבחר מתוך עבודות שכבר עלו על הבמה. אפשר לצפות, לשמוע ולקרוא.</p>
-  <p style="margin:8px 0 0;font-size:14px;font-weight:700;color:var(--ink)">* שימו לב: השירה היא שירת נשים.</p>
+  <p style="margin:8px 0 0;font-size:14px;font-weight:700;color:var(--ink)">* שימי לב - שירת נשים</p>
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-p="pv">וידאו ומחזמרים</button>
     <button role="tab" aria-selected="false" data-p="pa">שירים לשמיעה</button>
@@ -520,11 +520,11 @@ $('#vids').addEventListener('click',e=>{const b=e.target.closest('.vcard');if(!b
   openV(t,`<video src="${U(B.v[b.dataset.i])}" controls autoplay playsinline controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture disableremoteplayback></video><span class="vid-wm">© שרי יפה</span>`)});
 
 /* audio */
-const tr=[['מתוך הפקה · חלק א׳',272],['מתוך הפקה · חלק ב׳',239],['מתוך הפקה · חלק ג׳',300],['מתוך הפקה · חלק ד׳',194],['שיר מקורי · ה׳',222],['שיר מקורי · ו׳',223],['שיר מקורי · ז׳',221],['שיר מקורי · ח׳',314],['שיר מקורי · ט׳',191],['שיר מקורי · י׳',191]];
+const tr=[['מתוך הפקה · חלק א׳',272],['מתוך הפקה · חלק ב׳',239],['מתוך הפקה · חלק ג׳',300],['מתוך הפקה · חלק ד׳',194],['שיר מקורי · ה׳',222],['שיר מקורי · ו׳',223],['שיר מקורי · ז׳',221],['שיר מקורי · ח׳',314],['שיר מקורי · ט׳',191],['שיר מקורי · י׳',191],['שיר מקורי · י״א',284,'m/au11.mp3']];
 const fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
 $('#tracks').innerHTML=tr.map(([t,s],i)=>`<li><button data-i="${i}"><span class="n">${i+1}</span><span>${t}</span><span class="d">${fmt(s)}</span></button></li>`).join('');
 const au=$('#au'),bp=$('#bp');let cur=-1;
-const load=i=>{cur=i;au.src=U(B.au[i]);$('#nt').textContent=tr[i][0];$('#dur').textContent=fmt(tr[i][1]);
+const load=i=>{cur=i;au.src=tr[i][2]||U(B.au[i]);$('#nt').textContent=tr[i][0];$('#dur').textContent=fmt(tr[i][1]);
   document.querySelectorAll('#tracks button').forEach(b=>b.setAttribute('aria-current',+b.dataset.i===i))};
 const play=()=>au.play().catch(()=>{});
 $('#tracks').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;if(i===cur){au.paused?play():au.pause();return}load(i);play()});
