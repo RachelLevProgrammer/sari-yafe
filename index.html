@@ -520,7 +520,7 @@ $('#vids').addEventListener('click',e=>{const b=e.target.closest('.vcard');if(!b
   openV(t,`<video src="${U(B.v[b.dataset.i])}" controls autoplay playsinline controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture disableremoteplayback></video><span class="vid-wm">© שרי יפה</span>`)});
 
 /* audio */
-const tr=[['מתוך הפקה · חלק א׳',272],['מתוך הפקה · חלק ב׳',239],['מתוך הפקה · חלק ג׳',300],['מתוך הפקה · חלק ד׳',194],['שיר מקורי · ה׳',222],['שיר מקורי · ו׳',223],['שיר מקורי · ז׳',221],['שיר מקורי · ח׳',314],['שיר מקורי · ט׳',191],['שיר מקורי · י׳',191],['שיר מקורי · י״א',284,'m/au11.mp3']];
+const tr=[['מתוך הפקה · חלק א׳',272],['מתוך הפקה · חלק ב׳',239],['מתוך הפקה · חלק ג׳',300],['מתוך הפקה · חלק ד׳',194],['שיר מקורי · ה׳',222],['שיר מקורי · ו׳',223],['שיר מקורי · ז׳',221],['שיר מקורי · ח׳',314],['שיר מקורי · ט׳',191],['שיר מקורי · י׳',191],['שיר מקורי · י״א',284,'m/au11.mp4']];
 const fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
 $('#tracks').innerHTML=tr.map(([t,s],i)=>`<li><button data-i="${i}"><span class="n">${i+1}</span><span>${t}</span><span class="d">${fmt(s)}</span></button></li>`).join('');
 const au=$('#au'),bp=$('#bp');let cur=-1;
@@ -579,7 +579,7 @@ const ink=$('#ink');addEventListener('scroll',()=>{const m=document.documentElem
 
 /* bat mitzvah songs player */
 {const $=q=>document.querySelector(q),fmt=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
-const tb=[['שיר בת מצווה · א׳','m/bm1.mp3',227],['שיר בת מצווה · ב׳','m/bm2.mp3',278],['שיר בת מצווה · ג׳','m/bm3.mp3',246]];
+const tb=[['שיר בת מצווה · א׳','m/bm1.mp4',227],['שיר בת מצווה · ב׳','m/bm2.mp4',278],['שיר בת מצווה · ג׳','m/bm3.mp4',246]];
 const a=$('#aub'),b=$('#bpb');let c=-1;
 $('#tracksb').innerHTML=tb.map(([t,,d],i)=>`<li><button data-i="${i}"><span class="n">${i+1}</span><span>${t}</span><span class="d">${fmt(d)}</span></button></li>`).join('');
 const ld=i=>{c=i;a.src=tb[i][1];$('#ntb').textContent=tb[i][0];$('#durb').textContent=fmt(tb[i][2]);document.querySelectorAll('#tracksb button').forEach(x=>x.setAttribute('aria-current',+x.dataset.i===i))};
